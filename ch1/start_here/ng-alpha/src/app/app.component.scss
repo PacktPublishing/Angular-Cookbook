@@ -1,0 +1,17 @@
+.route-links {
+  background-color: white;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: flex-start;
+  &__route-link {
+    margin-right: 10px;
+    background-color: #eee;
+    padding: 6px 16px;
+    transition: all ease 0.2s;
+    &:hover, &--active {
+      cursor: pointer;
+      color: white;
+      background-color: #333;
+    }
+  }
+}
