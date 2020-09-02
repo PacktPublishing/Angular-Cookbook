@@ -1,0 +1,15 @@
+.type-picker {
+  margin-bottom: 16px;
+  text-align: center;
+  &__options {
+    display: flex;
+    &__option {
+      &:nth-child(1) {
+        margin-right: 8px;
+      }
+      &:nth-child(2) {
+        margin-left: 8px;
+      }
+    }
+  }
+}
