@@ -1,0 +1,30 @@
+.fruits {
+  width: 300px;
+  &__item {
+    padding: 4px 8px;
+    border: 1px solid #eeee;
+    display: flex;
+    align-items: center;
+    &__title {
+      flex: 1;
+      margin-right: 16px;
+    }
+    .material-icons {
+      color: red;
+      cursor: pointer;
+      &:hover {
+        color: #333;
+      }
+    }
+    &--limited {
+      background-color: #333;
+      color: white;
+    }
+  }
+}
+
+.add-section {
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
