@@ -1,0 +1,163 @@
+/*
+  Code Credit: https://codepen.io/eMineiro/pen/vKkdya
+*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e9ebee;
+}
+
+.f-card {
+  background-color: white;
+  width: 502px;
+  border: 1px solid #d0d1d5;
+  border-radius: 3px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 12px;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Not original, just a test */
+}
+
+.header {
+  margin-bottom: 17px;
+}
+
+.co-logo {
+  /*display:block;*/
+  float: left;
+  margin-right: 8px;
+
+  width: 40px;
+  height: 40px;
+}
+
+.co-name > a {
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.38;
+  color: #365899;
+  text-decoration: none;
+
+  margin-bottom: 2px;
+}
+
+.co-name > a:hover {
+  text-decoration: underline;
+}
+
+.time {
+  font-family: Helvetica;
+  font-size: 12px;
+  color: #90949c;
+}
+
+.time > a {
+  color: #90949c;
+  text-decoration: none;
+}
+
+.time > a:hover {
+  text-decoration: underline;
+}
+
+.options {
+  font-family: Helvetica;
+  font-size: 12px;
+  color: #e5e5e5;
+  float: right;
+}
+
+.options:hover {
+  color: black; /* Fallback */
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  clear: both;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.38;
+}
+
+.reference {
+  width: 476px;
+}
+.reference-thumb {
+  display: block;
+  width: 476px;
+  height: 249px;
+}
+
+.reference-content {
+  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top: 0;
+  padding: 10px 12px 10px 12px;
+}
+
+.reference:hover .reference-content {
+  border-color: black; /* Fallback */
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.reference-title {
+  font-family: Georgia;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+
+  margin-bottom: 5px;
+}
+
+.reference-subtitle {
+  font-family: Helvetica;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.reference-font {
+  color: #90949c;
+  font-family: Helvetica;
+  font-size: 11px;
+  line-height: 11px;
+  text-transform: uppercase;
+
+  padding-top: 9px;
+}
+
+.social {
+  margin-top: 12px;
+}
+.social-buttons {
+  color: #7f7f7f;
+  font-family: Helvetica;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;
+
+  border-top: 1px solid #e5e5e5;
+  padding-top: 4px;
+}
+
+.social-buttons span {
+  font-size: 12px;
+  margin-right: 20px;
+  padding: 4px 4px 4px 0;
+}
+
+.social-buttons span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.social-buttons span i {
+  padding-right: 4px;
+}
