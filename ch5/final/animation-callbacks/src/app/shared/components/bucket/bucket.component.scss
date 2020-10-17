@@ -1,0 +1,67 @@
+.buckets {
+  width: 300px;
+  margin: 0 auto;
+  .fruits {
+    &__item {
+      padding: 4px 8px;
+      border: 1px solid #eeee;
+      display: flex;
+      align-items: center;
+      &__title {
+        flex: 1;
+        margin-right: 16px;
+      }
+      .material-icons {
+        color: red;
+        cursor: pointer;
+        &:hover {
+          color: #333;
+        }
+      }
+      &--limited {
+        background-color: #333;
+        color: white;
+      }
+    }
+  }
+
+  .add-section {
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+.bucket-icon {
+  &--animate {
+    animation: heartbeat 1s infinite;
+  }
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
+}
