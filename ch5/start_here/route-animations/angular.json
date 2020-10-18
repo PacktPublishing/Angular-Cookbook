@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-beta": {
+    "route-animations": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-beta",
+            "outputPath": "dist/route-animations",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-beta:build"
+            "browserTarget": "route-animations:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-beta:build:production"
+              "browserTarget": "route-animations:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-beta:build"
+            "browserTarget": "route-animations:build"
           }
         },
         "test": {
@@ -114,18 +114,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-beta:serve"
+            "devServerTarget": "route-animations:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-beta:serve:production"
+              "devServerTarget": "route-animations:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ng-beta",
+  "defaultProject": "route-animations",
   "cli": {
     "analytics": false
   }
