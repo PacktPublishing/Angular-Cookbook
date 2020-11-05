@@ -1,0 +1,36 @@
+.home {
+  .cards-container {
+    display: flex;
+    .input-stream {
+      margin-right: 10px;
+    }
+    .output-stream {
+      margin-left: 10px;
+    }
+    .input-stream,
+    .output-stream {
+      flex: 1;
+      padding: 1.8rem;
+      background-color: #333;
+      min-height: 200px;
+      min-width: 200px;
+      border-radius: 14px;
+      &__item {
+        color: lightgreen;
+      }
+    }
+
+  }
+
+  .buttons-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    button {
+      &:nth-child(1) {
+        margin-right: 16px;
+      }
+    }
+  }
+
+}
