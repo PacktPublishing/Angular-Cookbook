@@ -1,0 +1,15 @@
+.home {
+  text-align: center;
+  .box {
+    font-size: large;
+    transition: all 0.3s ease;
+  }
+  .box,
+  .submit-btn-container {
+    padding: 1.8rem;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
