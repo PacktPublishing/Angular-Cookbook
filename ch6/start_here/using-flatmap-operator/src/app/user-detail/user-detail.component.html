@@ -1,0 +1,9 @@
+<div class="user-detail">
+  <app-user-card class="user-card" [user]="user$ | async"></app-user-card>
+  <div class="secondary-container">
+    <h4>Similar Users</h4>
+    <div class="similar-users">
+      <app-user-card class="user-card" *ngFor="let user of similarUsers$ | async " [user]="user"></app-user-card>
+    </div>
+  </div>
+</div>
