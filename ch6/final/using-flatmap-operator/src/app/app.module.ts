@@ -17,7 +17,7 @@ import { LoaderComponent } from './core/components/loader/loader.component';
     UserDetailComponent,
     AppFooterComponent,
     UserCardComponent,
-    LoaderComponent
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
