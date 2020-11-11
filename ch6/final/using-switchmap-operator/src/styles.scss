@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+.user-card {
+  width: 300px;
+  height: 444px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  .card {
+    transition: all ease 0.2s;
+  }
+  &:hover {
+    .card {
+      box-shadow: 5px 5px rgba(88, 94, 93, 0.4),
+            10px 10px rgba(88, 94, 93, 0.3),
+            15px 15px rgba(88, 94, 93, 0.2),
+            20px 20px rgba(88, 94, 93, 0.1),
+            25px 25px rgba(88, 94, 93, 0.05);
+    }
+  }
+}
