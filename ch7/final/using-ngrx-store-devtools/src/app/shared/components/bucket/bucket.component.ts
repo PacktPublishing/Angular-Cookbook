@@ -12,16 +12,13 @@ import { addItemToBucket, removeItemFromBucket } from 'src/app/store/app.actions
   selector: 'app-bucket',
   templateUrl: './bucket.component.html',
   styleUrls: ['./bucket.component.scss'],
-  animations: [ANIMATIONS.LIST_ANIMATION]
+  animations: [ANIMATIONS.LIST_ANIMATION],
 })
 export class BucketComponent implements OnInit {
   $bucket: Observable<IFruit[]>;
   selectedFruit: Fruit = '' as null;
   fruits: string[] = Object.values(Fruit);
-  constructor(
-    private bucketService: BucketService,
-    private store: Store<AppState>
-  ) { }
+  constructor(private bucketService: BucketService, private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.$bucket = this.bucketService.$bucket;
@@ -31,14 +28,14 @@ export class BucketComponent implements OnInit {
   addSelectedFruitToBucket() {
     const newItem: IFruit = {
       id: Date.now(),
-      name: this.selectedFruit
-    }
+      name: this.selectedFruit,
+    };
     this.bucketService.addItem(newItem);
-    this.store.dispatch(addItemToBucket({fruit: newItem}));
-  }
-  deleteFromBucket(fruit: IFruit) {
-    this.bucketService.removeItem(fruit);
-    this.store.dispatch(removeItemFromBucket({fruit}));
+    this.store.dispatch(addItemToBucket({ fruit: newItem }));
   }
 
+  deleteFromBucket(fruit: IFruit) {
+    this.bucketService.removeItem(fruit);
+    this.store.dispatch(removeItemFromBucket({ fruit }));
+  }
 }
