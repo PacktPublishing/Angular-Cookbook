@@ -1,0 +1,8 @@
+<div class="home">
+  <h2>Users</h2>
+  <div class="secondary-container">
+    <div class="users" *ngIf="users$ | async as users">
+      <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
+    </div>
+  </div>
+</div>

@@ -13,20 +13,20 @@ import { switchMap, takeWhile } from 'rxjs/operators';
 export class HomeComponent implements OnInit, OnDestroy {
   users: IUser[];
   searchForm: FormGroup
-  componendAlive: boolean;
+  componentAlive: boolean;
   constructor(
     private userService: UserService
   ) {}
 
   ngOnInit() {
-    this.componendAlive = true;
+    this.componentAlive = true;
     this.searchForm = new FormGroup({
       username: new FormControl('', [])
     })
     this.searchUsers();
     this.searchForm.get('username').valueChanges
       .pipe(
-        takeWhile(() => !!this.componendAlive),
+        takeWhile(() => !!this.componentAlive),
         switchMap((query) => this.userService.searchUsers(query))
       )
       .subscribe((users) => {
