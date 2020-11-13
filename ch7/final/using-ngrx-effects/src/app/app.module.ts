@@ -11,6 +11,8 @@ import { LoaderComponent } from './core/components/loader/loader.component';
 import { StoreModule } from '@ngrx/store';
 import * as appStore from './store/app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './store/app.effects';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
     }),
+    EffectsModule.forRoot([AppEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
