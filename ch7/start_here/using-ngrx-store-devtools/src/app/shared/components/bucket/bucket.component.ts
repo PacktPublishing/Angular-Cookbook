@@ -15,7 +15,7 @@ import { addItemToBucket, removeItemFromBucket } from 'src/app/store/app.actions
   animations: [ANIMATIONS.LIST_ANIMATION]
 })
 export class BucketComponent implements OnInit {
-  $bucket: Observable<IFruit[]>;
+  bucket$: Observable<IFruit[]>;
   selectedFruit: Fruit = '' as null;
   fruits: string[] = Object.values(Fruit);
   constructor(
@@ -24,7 +24,7 @@ export class BucketComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.$bucket = this.bucketService.$bucket;
+    this.bucket$ = this.bucketService.bucket$;
     this.bucketService.loadItems();
   }
 

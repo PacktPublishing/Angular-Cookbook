@@ -12,13 +12,13 @@ import { ANIMATIONS } from '../../../constants/animations';
   animations: [ANIMATIONS.LIST_ANIMATION]
 })
 export class BucketComponent implements OnInit {
-  $bucket: Observable<IFruit[]>;
+  bucket$: Observable<IFruit[]>;
   selectedFruit: Fruit = '' as null;
   fruits: string[] = Object.values(Fruit);
   constructor(private bucketService: BucketService) { }
 
   ngOnInit(): void {
-    this.$bucket = this.bucketService.$bucket;
+    this.bucket$ = this.bucketService.bucket$;
     this.bucketService.loadItems();
   }
 

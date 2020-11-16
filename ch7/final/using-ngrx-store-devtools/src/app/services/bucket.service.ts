@@ -8,7 +8,7 @@ import { IBucketService } from '../interfaces/bucket-service';
 })
 export class BucketService implements IBucketService {
   bucketSource = new BehaviorSubject([]);
-  $bucket: Observable<IFruit[]> = this.bucketSource.asObservable();
+  bucket$: Observable<IFruit[]> = this.bucketSource.asObservable();
   constructor() {
   }
 
