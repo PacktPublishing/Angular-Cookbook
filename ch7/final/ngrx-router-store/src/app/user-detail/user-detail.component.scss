@@ -1,0 +1,37 @@
+:host {
+  display: block;
+  width: 100%;
+}
+.user-detail {
+  .user-card {
+    height: 444px;
+  }
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .secondary-container {
+    display: grid;
+    margin-top: 30px;
+    height: 480px;
+    .similar-users {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: auto;
+      height: 100%;
+      .user-card {
+        height: 100%;
+        margin-right: 30px;
+        min-width: 240px;
+        width: 240px;
+        .card {
+          height: 100%;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
