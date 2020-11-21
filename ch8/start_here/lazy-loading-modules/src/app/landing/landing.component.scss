@@ -1,0 +1,34 @@
+.landing {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &__header {
+    height: 60px;
+    padding: 0 20px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &__main {
+      flex: 1;
+    }
+    &__links {
+      display: flex;
+      &__link {
+        margin-left: 16px;
+        &:hover {
+          color: #ececec;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &__body {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background-color: #ececec;
+  }
+}
