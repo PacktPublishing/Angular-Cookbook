@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+.user-card {
+  text-align: center;
+  height: 100%;
+  margin-right: 30px;
+  min-width: 240px;
+  width: 240px;
+  cursor: pointer;
+  .card {
+    height: 100%;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
