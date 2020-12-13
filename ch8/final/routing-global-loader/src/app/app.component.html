@@ -317,11 +317,11 @@
     <button class="btn btn-light" (click)="logout()">Logout</button>
   </div>
 </div>
+<app-loader *ngIf="isLoadingRoute"></app-loader>
 <div class="content" role="main">
   <div class="page-section">
     <router-outlet></router-outlet>
   </div>
-
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
