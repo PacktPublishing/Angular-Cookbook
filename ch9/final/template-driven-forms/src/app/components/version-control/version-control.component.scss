@@ -9,9 +9,15 @@
   min-width: 400px;
   .version-control {
     display: flex;
+    justify-content: center;
   }
 
-  app-release-logs {
+  app-release-logs,
+  app-release-form {
     flex: 1;
+  }
+
+  app-release-form {
+    margin-right: 20px;
   }
 }
