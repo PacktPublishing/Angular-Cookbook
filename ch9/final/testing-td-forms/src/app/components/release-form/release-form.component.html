@@ -1,0 +1,21 @@
+<form #releaseForm="ngForm" (ngSubmit)="formSubmit(releaseForm)">
+  <div class="form-group">
+    <label for="appName">Select App</label>
+    <select #nameInput="ngModel" name="app" [(ngModel)]="newLog.app" class="form-control" id="appName" required>
+      <option value="">--Choose--</option>
+      <option *ngFor="let app of apps" [value]="app">{{app}}</option>
+    </select>
+    <div [hidden]="nameInput.valid || nameInput.pristine" class="alert alert-danger">
+      Please choose an app
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="versionNumber">Version Number</label>
+    <input #versionInput="ngModel" [pattern]="versionInputRegex" name="version" [(ngModel)]="newLog.version" type="text" class="form-control" id="versionNumber" aria-describedby="versionHelp" placeholder="Enter version number" required>
+    <small id="versionHelp" class="form-text text-muted">Use semantic versioning (x.x.x)</small>
+    <div [hidden]="versionInput.valid || versionInput.pristine" class="alert alert-danger">
+      Please write an appropriate version number
+    </div>
+  </div>
+  <button type="submit" [disabled]="releaseForm.invalid" class="btn btn-primary">Submit</button>
+</form>
