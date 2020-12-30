@@ -1,0 +1,15 @@
+<form [formGroup]="releaseForm" (ngSubmit)="formSubmit(releaseForm)">
+  <div class="form-group">
+    <label for="appName">Select App</label>
+    <select formControlName="app" class="form-control" id="appName" required>
+      <option value="">--Choose--</option>
+      <option *ngFor="let app of apps" [value]="app">{{app}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="versionNumber">Version Number</label>
+    <input formControlName="version" type="text" class="form-control" id="versionNumber" aria-describedby="versionHelp" placeholder="Enter version number">
+    <small id="versionHelp" class="form-text text-muted">Use semantic versioning (x.x.x)</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
