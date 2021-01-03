@@ -15,7 +15,7 @@
     <label for="versionNumber">Version Number</label>
     <input formControlName="version" type="text" class="form-control" id="versionNumber" aria-describedby="versionHelp" placeholder="Enter version number">
     <small id="versionHelp" class="form-text text-muted">Use semantic versioning (x.x.x)</small>
-    <div [hidden]="releaseForm.get('version').valid || releaseForm.get('version').pristine"
+    <div [style.display]="(releaseForm.get('version').getError('pattern') && !releaseForm.get('version').pristine) ? 'block' : 'none'"
       class="alert alert-danger">
       Please write an appropriate version number
     </div>
