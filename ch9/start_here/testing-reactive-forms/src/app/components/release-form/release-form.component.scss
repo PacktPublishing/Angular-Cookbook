@@ -1,0 +1,16 @@
+:host {
+  /* Error messages */
+  .alert {
+    margin-top: 16px;
+  }
+
+  /* Valid form input */
+  .ng-valid[required], .ng-valid.required  {
+    border-bottom: 3px solid #259f2b;
+  }
+
+  /* Invalid form input */
+  .ng-invalid:not(form)  {
+    border-bottom: 3px solid #c92421;
+  }
+}
