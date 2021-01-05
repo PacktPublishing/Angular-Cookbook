@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  width: 100%;
+}
+.home {
+  .review-container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+    max-width: 400px;
+    .users {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      height: 100%;
+      app-user-card {
+        margin: 0 10px;
+      }
+    }
+  }
+}
