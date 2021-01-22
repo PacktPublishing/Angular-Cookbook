@@ -20,13 +20,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     color: string
     borderRadius: string
   }>;
-  boxStyles: {
-    width: string,
-    height: string,
-    backgroundColor: string,
-    color: string
-    borderRadius: string
-  }
 
   boxForm = new FormGroup({
     size: new FormControl(''),
@@ -40,9 +33,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.listenToInputChanges();
-    setTimeout(() => {
-      this.initializeForm();
-    }, 0)
   }
 
   listenToInputChanges() {
@@ -52,6 +42,12 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.boxForm.get('backgroundColor').valueChanges,
       this.boxForm.get('textColor').valueChanges
     ]).pipe(
+      startWith([
+        this.sizeOptions[0],
+        this.colorOptions[0],
+        this.colorOptions[1],
+        this.borderRadiusOptions[0]
+      ]),
       map(([size, borderRadius, backgroundColor, textColor]) => {
       return {
         width: `${size}px`,
@@ -61,32 +57,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         borderRadius: `${borderRadius}px`
       }
     }));
-  }
-
-  initializeForm() {
-    this.boxForm.get('size').setValue(this.sizeOptions[0]);
-    this.boxForm.get('backgroundColor').setValue(this.colorOptions[0]);
-    this.boxForm.get('textColor').setValue(this.colorOptions[1]);
-    this.boxForm.get('borderRadius').setValue(this.borderRadiusOptions[0]);
-  }
-
-  setBoxStyles(size, backgroundColor, color, borderRadius) {
-    this.boxStyles = {
-      width: `${size}px`,
-      height: `${size}px`,
-      backgroundColor,
-      color,
-      borderRadius: `${borderRadius}px`
-    }
-  }
-
-  applyChanges() {
-    this.setBoxStyles(
-      this.boxForm.get('size').value,
-      this.boxForm.get('backgroundColor').value,
-      this.boxForm.get('textColor').value,
-      this.boxForm.get('borderRadius').value,
-    )
   }
 
   ngOnDestroy() {}

@@ -10,7 +10,7 @@ import { map, takeWhile } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   inputStreamData = ['john wick', 'inception', 'interstellar'];
-  streamsOutput$: Observable<string[]>;
+  streamsOutput$: Observable<number[]>;
   outputStreamData = []
   constructor() { }
 
