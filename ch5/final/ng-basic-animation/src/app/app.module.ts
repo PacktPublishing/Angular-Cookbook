@@ -7,8 +7,6 @@ import { SocialCardComponent } from './components/social-card/social-card.compon
 import { FbCardComponent } from './components/fb-card/fb-card.component';
 import { TwitterCardComponent } from './components/twitter-card/twitter-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 @NgModule({
   declarations: [
     AppComponent,

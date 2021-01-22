@@ -304,7 +304,7 @@
       <div class="type-picker__options__option" (click)="setCardType(cardTypes.Facebook)">
         <button class="btn type-picker__options__option__btn" [ngClass]="selectedCardType === cardTypes.Facebook ? 'btn-primary type-picker__options__option__btn--active' : 'btn-light'">
           <div class="icon-facebook"></div>
-          <div class="type-picker__options__option__btn__text" [@fbButtonTextAnimation]="isFBBtnActive ? 'btn-active-text' : 'btn-inactive-text'">
+          <div class="type-picker__options__option__btn__text" [@socialBtnText]="selectedCardType === cardTypes.Facebook ? 'btn-active-text' : 'btn-inactive-text'">
             Facebook
           </div>
         </button>
@@ -312,7 +312,7 @@
       <div class="type-picker__options__option" (click)="setCardType(cardTypes.Twitter)">
         <button class="btn type-picker__options__option__btn" [ngClass]="selectedCardType === cardTypes.Twitter ? 'btn-primary type-picker__options__option__btn--active' : 'btn-light'">
           <div class="icon-twitter"></div>
-          <div class="type-picker__options__option__btn__text" [@twButtonTextAnimation]="isTwBtnActive ? 'btn-active-text' : 'btn-inactive-text'">
+          <div class="type-picker__options__option__btn__text" [@socialBtnText]="selectedCardType === cardTypes.Twitter ? 'btn-active-text' : 'btn-inactive-text'">
             Twitter
           </div>
         </button>
