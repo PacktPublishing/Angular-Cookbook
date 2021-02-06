@@ -1,0 +1,21 @@
+<h4 class="heading">Our trusted customers</h4>
+<div class="list list-group">
+  <div class="list__item list-group-item" *ngFor="let item of listItems">
+    <div class="list__item__primary">
+      <div class="list__item__primary__info">
+        {{item.name}}
+      </div>
+      <div class="list__item__primary__info">
+        {{item.phone}}
+      </div>
+    </div>
+    <div class="list__item__secondary">
+      <div class="list__item__secondary__info">
+        <img src="{{item.picture}}">
+      </div>
+      <div class="list__item__secondary__info">
+        {{item.email}}
+      </div>
+    </div>
+  </div>
+</div>
