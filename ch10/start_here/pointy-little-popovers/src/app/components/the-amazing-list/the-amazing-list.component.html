@@ -1,0 +1,11 @@
+<h4 class="heading">Our trusted customers</h4>
+<cdk-virtual-scroll-viewport
+  class="list list-group"
+  [itemSize]="110">
+  <app-the-amazing-list-item
+    class="list__item list-group-item"
+    *cdkVirtualFor="let item of listItems"
+    [item]="item">
+  </app-the-amazing-list-item>
+</cdk-virtual-scroll-viewport>
+
