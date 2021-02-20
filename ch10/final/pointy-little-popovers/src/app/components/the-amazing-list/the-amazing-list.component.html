@@ -1,0 +1,32 @@
+<h4 class="heading">Our trusted customers</h4>
+<cdk-virtual-scroll-viewport
+  class="list list-group"
+  [itemSize]="110">
+  <app-the-amazing-list-item
+    class="list__item list-group-item"
+    *cdkVirtualFor="let item of listItems"
+    (click)="openMenu($event, itemTrigger)"
+    cdkOverlayOrigin #itemTrigger="cdkOverlayOrigin"
+    [item]="item">
+  </app-the-amazing-list-item>
+</cdk-virtual-scroll-viewport>
+
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="popoverMenuTrigger"
+  [cdkConnectedOverlayOpen]="menuShown" [cdkConnectedOverlayHasBackdrop]="true"
+  (backdropClick)="menuShown = false" [cdkConnectedOverlayPositions]="menuPositions"
+  appPopoverPositionalClass targetSelector=".menu-popover" inverseClass="menu-popover--up"
+  [originY]="menuPopoverOrigin.originY" (positionChange)="popoverPositionChanged($event, menuPopoverOrigin)"
+  cdkConnectedOverlayPanelClass="menu-popover"
+  >
+  <div class="menu-popover__list">
+    <div class="menu-popover__list__item">
+      Duplicate
+    </div>
+    <div class="menu-popover__list__item">
+      Edit
+    </div>
+    <div class="menu-popover__list__item">
+      Delete
+    </div>
+  </div>
+</ng-template>

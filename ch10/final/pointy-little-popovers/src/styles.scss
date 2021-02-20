@@ -1,0 +1,141 @@
+/* You can add global styles to this file, and also import other style files */
+
+.cdk-overlay-container {
+  display: block;
+  &.z-index-top {
+    z-index: 2050;
+  }
+}
+
+.duplicate-modal-overlay {
+  z-index: 999;
+}
+
+.cdk-overlay-backdrop {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.cdk-overlay-container,
+.cdk-global-overlay-wrapper {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cdk-overlay-container {
+  position: fixed;
+  z-index: 1000;
+}
+
+.cdk-overlay-container:empty {
+  display: none;
+}
+
+.cdk-global-overlay-wrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+}
+
+.cdk-overlay-pane {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  background-color: #fff;
+  z-index: 1000;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cdk-overlay-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 1;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    opacity: 0.6;
+  }
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.cdk-overlay-transparent-backdrop,
+.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0;
+}
+
+.cdk-overlay-connected-position-bounding-box {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+
+.menu-popover {
+  min-width: 150px;
+  height: auto;
+  border: 1px solid white;
+  border-radius: 8px;
+
+  &::before {
+    top: -10px;
+    border-width: 0px 10px 10px 10px;
+    border-color: transparent transparent white  transparent;
+    position: absolute;
+    content: '';
+    right: 5%;
+    border-style: solid;
+  }
+
+  &--up {
+    transform: translateY(-20px);
+    &::before {
+      top: unset !important;
+      transform: rotate(180deg);
+      bottom: -10px;
+    }
+  }
+
+  &__list {
+    color: #333;
+    font-size: 0.75rem;
+    width: 100%;
+    box-shadow: 0px 2px 14px 4px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    &__item {
+      transition: all 0.2s ease;
+      padding: 8px 16px;
+      cursor: pointer;
+      &:hover {
+        background-color: #333;
+        color: white;
+      }
+    }
+  }
+}
