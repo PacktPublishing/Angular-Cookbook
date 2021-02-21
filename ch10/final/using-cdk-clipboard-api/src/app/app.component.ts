@@ -1,3 +1,4 @@
+import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ContentType } from './constants/content-type';
 import { IMAGE_URL } from './constants/image-url';
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  constructor() {
+  constructor(private clipboard: Clipboard) {
     this.resetCopiedHash();
   }
 
@@ -31,6 +32,12 @@ export class AppComponent implements OnInit {
       $event.stopImmediatePropagation();
     }
     this.contentCopied = type;
+  }
+
+  async copyImageUrl(srcImageUrl) {
+    const data = await fetch(srcImageUrl);
+    const blob = await data.blob();
+    this.clipboard.copy(URL.createObjectURL(blob));
   }
 
   ngOnInit() {

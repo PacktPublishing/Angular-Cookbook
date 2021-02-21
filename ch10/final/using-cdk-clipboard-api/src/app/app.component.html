@@ -303,6 +303,8 @@
       <h3>Copy From</h3>
       <div class="mb-3 content__container__copy-from__input-group">
         <input
+          #linkInput
+          [cdkCopyToClipboard]="linkInput.value"
           (click)="copyContent($event, contentTypes.Link)"
           class="form-control"
           type="text" readonly="true"
@@ -313,9 +315,11 @@
       </div>
       <div class="mb-3 content__container__copy-from__input-group">
         <textarea
+          #textInput
           class="form-control"
           rows="5">{{loremIpsumText}}</textarea>
         <button
+          [cdkCopyToClipboard]="textInput.value"
           (click)="copyContent($event, contentTypes.Text)"
           class="btn btn-dark">
           {{ contentCopied === contentTypes.Text ? 'Text copied' : 'Copy text to clipboard'}}
@@ -324,7 +328,7 @@
       <div class="mb-3 content__container__copy-from__input-group">
         <img [src]="imageUrl">
         <button
-          (click)="copyContent($event, contentTypes.Image)"
+          (click)="this.copyImageUrl(imageUrl); copyContent($event, contentTypes.Image)"
           class="btn btn-dark">
           {{ contentCopied === contentTypes.Image ? 'Image copied' : 'Copy image to clipboard'}}
         </button>
