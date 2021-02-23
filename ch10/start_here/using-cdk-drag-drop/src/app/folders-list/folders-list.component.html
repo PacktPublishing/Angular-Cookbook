@@ -1,0 +1,20 @@
+<div class="folders">
+  <div class="folders__heading">
+    <h3>Tap a folder to view its files</h3>
+  </div>
+  <div class="folders__list">
+    <app-folder
+      [ngClass]="{ 'folders__list__folder--selected': folder === selectedFolder }"
+      (click)="toggleFolderSelect(folder)"
+      class="folders__list__folder"
+      *ngFor="let folder of folders"
+      [folder]="folder"
+    >
+    </app-folder>
+  </div>
+  <div class="folders__selected-folder-files" *ngIf="selectedFolder">
+    <div class="folder__files">
+      <app-file *ngFor="let file of selectedFolder.files" [file]="file"></app-file>
+    </div>
+  </div>
+</div>
