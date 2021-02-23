@@ -1,9 +1,12 @@
-<div class="folders">
+<div class="folders" cdkDropListGroup>
   <div class="folders__heading">
     <h3>Tap a folder to view its files</h3>
   </div>
   <div class="folders__list">
     <app-folder
+      cdkDropList
+      [cdkDropListData]="folder.files"
+      (cdkDropListDropped)="onFileDrop($event)"
       [ngClass]="{
         'folders__list__folder--selected': folder === selectedFolder
       }"
@@ -15,12 +18,27 @@
     </app-folder>
   </div>
   <div class="folders__selected-folder-files" *ngIf="selectedFolder">
-    <div>
+    <div
+      cdkDropList
+      [cdkDropListData]="selectedFolder.files"
+      (cdkDropListDropped)="onFileDrop($event)"
+    >
       <app-file
+        cdkDrag
+        [cdkDragData]="file"
         *ngFor="let file of selectedFolder.files"
         [file]="file"
         class="folders__selected-folder-files__file"
-      ></app-file>
+      >
+        <fa-icon
+          class="file-drag-preview"
+          *cdkDragPreview
+          [icon]="file.icon"
+        ></fa-icon>
+        <div class="file-drop-placeholder" *cdkDragPlaceholder>
+          <fa-icon [icon]="upArrow"></fa-icon>
+        </div>
+      </app-file>
     </div>
   </div>
 </div>
