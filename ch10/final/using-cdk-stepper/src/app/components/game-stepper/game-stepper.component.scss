@@ -1,0 +1,28 @@
+.game-stepper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > button {
+      margin: 0 8px;
+    }
+  }
+
+  &__content {
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  header,
+  footer {
+    margin: 10px auto;
+  }
+}

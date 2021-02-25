@@ -1,0 +1,37 @@
+<section class="game-stepper">
+  <header>
+    <h3>
+      <ng-container
+        *ngIf="selected.stepLabel; else showLabelText"
+        [ngTemplateOutlet]="selected.stepLabel.template"
+      >
+      </ng-container>
+      <ng-template #showLabelText>
+        {{ selected.label }}
+      </ng-template>
+    </h3>
+  </header>
+
+  <section class="game-stepper__content">
+    <div [ngTemplateOutlet]="selected ? selected.content : null"></div>
+  </section>
+
+  <footer class="game-stepper__navigation">
+    <button
+      class="game-stepper__navigation__button btn btn-primary"
+      cdkStepperPrevious
+      [style.visibility]="steps.get(selectedIndex - 1) ? 'visible' : 'hidden'"
+    >
+      &larr;
+    </button>
+
+    <button
+      class="game-stepper__navigation__button btn btn-primary"
+      cdkStepperNext
+      [disabled]="!selected.completed"
+      [style.visibility]="steps.get(selectedIndex + 1) ? 'visible' : 'hidden'"
+    >
+      &rarr;
+    </button>
+  </footer>
+</section>

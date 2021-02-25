@@ -8,6 +8,9 @@ import { ValueGuesserComponent } from './components/value-guesser/value-guesser.
 import { GameComponent } from './game/game.component';
 import { LeaderBoardComponent } from './components/leader-board/leader-board.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { GameStepperComponent } from './components/game-stepper/game-stepper.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,8 +18,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     ValueGuesserComponent,
     GameComponent,
     LeaderBoardComponent,
+    GameStepperComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    CdkStepperModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

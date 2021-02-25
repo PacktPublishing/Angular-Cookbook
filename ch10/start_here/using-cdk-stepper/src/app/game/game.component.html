@@ -1,3 +1,28 @@
+<form (ngSubmit)="submitName()" [formGroup]="nameForm">
+  <div class="mb-3" *ngIf="nameForm.get('name') as nameControl">
+    <label for="nameInput" class="form-label">Player Name</label>
+    <input
+      type="text"
+      formControlName="name"
+      class="form-control"
+      id="nameInput"
+      placeholder="Enter your name"
+    />
+    <div
+      [style.display]="
+        nameControl.getError('required') && !nameControl.pristine
+          ? 'block'
+          : 'none'
+      "
+      class="alert alert-danger"
+    >
+      Please enter player name
+    </div>
+  </div>
+  <button type="submit" [disabled]="!nameForm.valid" class="btn btn-primary">
+    Submit
+  </button>
+</form>
 <app-value-guesser></app-value-guesser>
 <app-dice></app-dice>
 <app-leader-board></app-leader-board>
