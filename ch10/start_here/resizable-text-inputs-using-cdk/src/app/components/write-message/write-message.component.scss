@@ -1,0 +1,20 @@
+.write-box-container {
+  display: flex;
+  flex-direction: row;
+  .write-box {
+    flex: 1;
+    textarea {
+      width: 100%;
+      height: 100%;
+      resize: none;
+    }
+  }
+  textarea {
+    padding: 10px;
+  }
+  .send-button {
+    .btn {
+      height: 100%;
+    }
+  }
+}

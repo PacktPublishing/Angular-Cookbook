@@ -1,0 +1,20 @@
+<div class="write-box-container">
+  <div class="write-box">
+    <textarea
+      placeholder="Enter your message here"
+      class="chat-input"
+      [(ngModel)]="chatInput"
+      rows="1"
+      (keyup.enter)="sendMessage()"
+    ></textarea>
+  </div>
+  <div class="send-button">
+    <button
+      [disabled]="!chatInput || !chatInput.trim()"
+      class="btn btn-primary"
+      (click)="sendMessage()"
+    >
+      <i class="bi bi-arrow-right-circle-fill"></i>
+    </button>
+  </div>
+</div>
