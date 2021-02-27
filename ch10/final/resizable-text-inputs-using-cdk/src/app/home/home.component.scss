@@ -1,0 +1,10 @@
+#homePage{
+    display: flex;           
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;     
+    height: 100%;
+    .chat-container{
+        width: 400px;
+    }
+}

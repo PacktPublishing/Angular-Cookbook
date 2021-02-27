@@ -1,0 +1,43 @@
+.messages-list {
+  height: 300px;
+  overflow-y: auto;
+  padding-bottom: 4px;
+  .message-item {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    border-bottom: 1px solid #dcdcdc;
+    padding-right: 10px;
+    .from-user {
+      padding: 10px;
+      img {
+        width: 40px;
+        border-radius: 50%;
+      }
+    }
+    .message-text {
+      flex: 1;
+      padding: 10px;
+    }
+    .delete-btn {
+      height: 30px;
+      align-self: center;
+      visibility: hidden;
+    }
+
+    &:hover {
+      .delete-btn {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+#noMessagesBlock {
+  padding: 40px;
+  font-size: 20px;
+}
+
+.filters-container {
+  margin-bottom: 10px;
+}
