@@ -1,0 +1,34 @@
+.content {
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &__copy-from,
+    &__copy-to {
+      flex: 1;
+      margin: 0 10px;
+      border: 1px #ececec solid;
+      border-radius: 4px;
+      min-height: 400px;
+      padding: 16px;
+      h3 {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__copy-from {
+      &__input-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        button {
+          margin: 10px 0;
+        }
+        img {
+          width: 100%;
+          height: 200px;
+        }
+      }
+    }
+  }
+}
