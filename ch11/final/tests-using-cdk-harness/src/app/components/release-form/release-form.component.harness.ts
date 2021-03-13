@@ -17,7 +17,6 @@ export class ReleaseFormComponentHarness extends ComponentHarness {
 
   async clickSubmit() {
     const submitBtn = await this.getSubmitButton();
-    console.log(await submitBtn.getProperty('disabled'));
     return await submitBtn.click();
   }
 
