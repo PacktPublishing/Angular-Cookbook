@@ -1,0 +1,14 @@
+<div class="multiplication-table" *ngIf="digit && limit">
+  <div class="multiplication-table__info">
+    <div class="multiplication-table__info__item">Digit: {{ digit }}</div>
+    <div class="multiplication-table__info__item">Max Factor: {{ limit }}</div>
+  </div>
+  <div class="multiplication-table__elements">
+    <div
+      class="multiplication-table__elements__item"
+      *ngFor="let factor of [] | multTable: digit:limit"
+    >
+      {{ factor }}
+    </div>
+  </div>
+</div>
