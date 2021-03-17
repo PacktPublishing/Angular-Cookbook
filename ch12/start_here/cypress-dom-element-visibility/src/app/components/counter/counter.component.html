@@ -1,0 +1,17 @@
+<h1 class="counter__heading">Counter</h1>
+<h4 class="counter__sub-heading">Max {{ MAX_VALUE }}, Min {{ MIN_VALUE }}</h4>
+<div class="counter">
+  <div class="counter__text">(hover me)</div>
+  <div class="counter__value">{{ counter }}</div>
+  <div class="counter__actions">
+    <div class="counter__actions__action btn btn-primary" (click)="increment()">
+      Increment
+    </div>
+    <div class="counter__actions__action btn btn-dark" (click)="reset()">
+      Reset
+    </div>
+    <div class="counter__actions__action btn btn-primary" (click)="decrement()">
+      Decrement
+    </div>
+  </div>
+</div>
