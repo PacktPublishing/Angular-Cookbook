@@ -1,0 +1,56 @@
+<form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm)">
+  <div class="alert alert-success" *ngIf="formSubmitSuccess">
+    <div>Login Successful.</div>
+    <button
+      (click)="formSubmitSuccess = false"
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+    ></button>
+  </div>
+  <h2>Login to continue</h2>
+  <div class="mb-3">
+    <label for="emailInput" class="form-label">Email address</label>
+    <input
+      formControlName="email"
+      autocomplete="false"
+      type="email"
+      class="form-control"
+      id="emailInput"
+      aria-describedby="emailHelp"
+    />
+    <div
+      *ngIf="
+        loginForm.get('email').touched &&
+        loginForm.get('email').hasError('required')
+      "
+      id="emailHelp"
+      class="form-text form-error"
+    >
+      Email is required
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="passwodInput" class="form-label">Password</label>
+    <input
+      autocomplete="false"
+      formControlName="password"
+      type="password"
+      class="form-control"
+      id="passwodInput"
+    />
+    <div
+      *ngIf="
+        loginForm.get('password').touched &&
+        loginForm.get('password').hasError('required')
+      "
+      id="emailHelp"
+      class="form-text form-error"
+    >
+      Password is required
+    </div>
+  </div>
+  <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">
+    Submit
+  </button>
+</form>
