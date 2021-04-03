@@ -1,0 +1,9 @@
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
+  app-user-card {
+    margin: 0 20px 20px 0;
+  }
+}

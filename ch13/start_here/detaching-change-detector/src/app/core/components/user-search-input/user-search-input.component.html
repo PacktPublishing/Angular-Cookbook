@@ -1,0 +1,25 @@
+<form
+  class="input-container"
+  [formGroup]="searchForm"
+  (ngSubmit)="searchQueryChanged.emit(searchForm.get('username').value)"
+>
+  <div class="input-group mb-3">
+    <input
+      id="searchInput"
+      formControlName="username"
+      type="text"
+      class="form-control"
+      placeholder="Search user"
+      aria-label="Username"
+    />
+    <div class="input-group-append">
+      <button
+        class="btn btn-outline-secondary"
+        type="submit"
+        id="userSearchSubmit"
+      >
+        <span class="fa fa-search"></span>
+      </button>
+    </div>
+  </div>
+</form>

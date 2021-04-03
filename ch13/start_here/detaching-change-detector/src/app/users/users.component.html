@@ -1,0 +1,8 @@
+<div class="home">
+  <h2>Users</h2>
+  <app-user-search-input (searchQueryChanged)="searchUsers($event)">
+  </app-user-search-input>
+  <div class="secondary-container">
+    <app-user-card-list [users]="users"></app-user-card-list>
+  </div>
+</div>
