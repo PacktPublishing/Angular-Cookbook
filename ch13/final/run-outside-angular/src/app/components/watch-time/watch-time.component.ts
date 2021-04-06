@@ -1,11 +1,17 @@
-import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 
 @Component({
-  selector: 'app-watch-time-component',
-  templateUrl: './watch-time-component.component.html',
-  styleUrls: ['./watch-time-component.component.scss'],
+  selector: 'app-watch-time',
+  templateUrl: './watch-time.component.html',
+  styleUrls: ['./watch-time.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WatchTimeComponentComponent implements OnInit, AfterViewChecked {
+export class WatchTimeComponent implements OnInit {
   @Input() value: number;
   @Input() name;
   @Input() digits = 2;
@@ -19,6 +25,7 @@ export class WatchTimeComponentComponent implements OnInit, AfterViewChecked {
   }
 
   get timeVal() {
+    window['appLogs'][this.name]++;
     let str = this.value.toString();
     if (str.length === this.digits) {
       return str;
@@ -27,9 +34,5 @@ export class WatchTimeComponentComponent implements OnInit, AfterViewChecked {
       str = `0${str}`;
     }
     return str;
-  }
-
-  ngAfterViewChecked() {
-    window['appLogs'][this.name]++;
   }
 }
