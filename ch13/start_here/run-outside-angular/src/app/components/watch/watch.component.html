@@ -1,0 +1,25 @@
+<div class="watch" [class.watch--hover]="hover" #stopWatch>
+  <div class="watch__inner">
+    <app-watch-time-component
+      [value]="hours"
+      name="hours"
+    ></app-watch-time-component>
+    <div class="watch__inner__sep">:</div>
+    <app-watch-time-component
+      [value]="minutes"
+      name="minutes"
+    ></app-watch-time-component>
+    <div class="watch__inner__sep">:</div>
+    <app-watch-time-component
+      [value]="seconds"
+      name="seconds"
+    ></app-watch-time-component>
+    <div class="watch__inner__sep">:</div>
+    <app-watch-time-component
+      [value]="milliseconds"
+      name="milliseconds"
+      [digits]="3"
+    ></app-watch-time-component>
+  </div>
+  <div class="watch__greetings" *ngIf="name">Greetings {{ name }}</div>
+</div>

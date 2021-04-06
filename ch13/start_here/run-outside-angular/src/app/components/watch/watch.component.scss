@@ -1,0 +1,50 @@
+.watch {
+  background: #aa01fe;
+  padding: 40px;
+  display: block;
+  font-family: monospace;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 2;
+
+    &__sep {
+      font-size: var(--digit-font-size);
+      color: #ffeb3b;
+    }
+  }
+
+  &__greetings {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &--hover {
+    position: relative;
+    outline: none;
+    overflow: hidden;
+  }
+
+  /*
+    STUNNING HOVER EFFECTS
+    Took from this GREAT article:
+    https://blog.prototypr.io/stunning-hover-effects-with-css-variables-f855e7b95330
+  */
+
+  &--hover::before {
+    --size: 400px;
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, #01c3fe, transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+  }
+}

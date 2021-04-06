@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --digit-font-size: 52px;
+}
+
+@media all and (max-width: 480px) {
+  :root {
+    --digit-font-size: 32px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  :root {
+    --digit-font-size: 24px;
+  }
+}

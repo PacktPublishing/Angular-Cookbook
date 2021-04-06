@@ -1,0 +1,17 @@
+<h1>Watch</h1>
+<app-watch
+  [name]="name"
+  [hours]="time.hours"
+  [minutes]="time.minutes"
+  [seconds]="time.seconds"
+  [milliseconds]="time.milliseconds"
+></app-watch>
+
+<div class="form-group">
+  <input
+    placeholder="Enter your name"
+    class="form-control"
+    [(ngModel)]="name"
+    type="text"
+  />
+</div>
