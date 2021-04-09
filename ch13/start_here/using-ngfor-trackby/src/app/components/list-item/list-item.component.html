@@ -1,0 +1,21 @@
+<div class="list-item list-group-item" (click)="itemClicked.emit(item)">
+  <div class="list-item__primary">
+    <div class="list-item__primary__info">
+      {{ item.name }}
+    </div>
+    <div class="list-item__primary__info">
+      {{ item.phone }}
+    </div>
+  </div>
+  <div class="list-item__secondary">
+    <div class="list-item__secondary__info">
+      <img src="{{ item.picture }}" />
+    </div>
+    <div class="list-item__secondary__info">
+      {{ item.email }}
+    </div>
+  </div>
+  <div class="list-item__actions" (click)="deleteItem($event, item)">
+    <div class="list-item__actions__close btn btn-danger btn-close"></div>
+  </div>
+</div>

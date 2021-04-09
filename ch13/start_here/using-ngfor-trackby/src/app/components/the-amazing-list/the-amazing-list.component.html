@@ -1,0 +1,10 @@
+<h4 class="heading">Our trusted customers</h4>
+<div class="list list-group">
+  <app-list-item
+    *ngFor="let item of listItems"
+    [item]="item"
+    (itemClicked)="itemClicked.emit(item)"
+    (itemDeleted)="itemDeleted.emit(item)"
+  >
+  </app-list-item>
+</div>
