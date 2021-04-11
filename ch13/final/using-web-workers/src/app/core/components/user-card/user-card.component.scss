@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+.user-card {
+  text-align: center;
+  height: 100%;
+  margin-right: 30px;
+  min-width: 240px;
+  width: 240px;
+  cursor: pointer;
+  .card {
+    height: 100%;
+    .card-text {
+      &.unique-id {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}

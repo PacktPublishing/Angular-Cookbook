@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class UniqueIdPipe implements PipeTransform {
   characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  createUniquId(length) {
+  createUniqueId(length) {
     var result = '';
     const charactersLength = this.characters.length;
     for (let i = 0; i < length; i++) {
@@ -18,7 +18,7 @@ export class UniqueIdPipe implements PipeTransform {
 
   idUsingFactorial(num, length = 1) {
     if (num === 1) {
-      return this.createUniquId(length);
+      return this.createUniqueId(length);
     } else {
       const fact = length * (num - 1);
       return this.idUsingFactorial(num - 1, fact);

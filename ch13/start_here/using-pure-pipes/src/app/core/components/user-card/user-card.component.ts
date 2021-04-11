@@ -18,7 +18,7 @@ export class UserCardComponent implements OnInit {
     this.router.navigate([`/users/${this.user.login.uuid}`]);
   }
 
-  createUniquId(length) {
+  createUniqueId(length) {
     var result = '';
     var characters =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -31,7 +31,7 @@ export class UserCardComponent implements OnInit {
 
   idUsingFactorial(num, length = 1) {
     if (num === 1) {
-      return this.createUniquId(length);
+      return this.createUniqueId(length);
     } else {
       const fact = length * (num - 1);
       return this.idUsingFactorial(num - 1, fact);
