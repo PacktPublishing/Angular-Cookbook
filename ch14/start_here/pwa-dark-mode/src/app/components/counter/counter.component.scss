@@ -1,0 +1,32 @@
+.counter {
+  padding: 40px;
+  width: 500px;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__heading,
+  &__sub-heading {
+    text-align: center;
+  }
+  &__value {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    &__action {
+      margin: 0 4px;
+      &.btn.btn-primary {
+        background-color: var(--primary-btn-color);
+        color: var(--primary-btn-text-color);
+        border-color: var(--primary-btn-color);
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
