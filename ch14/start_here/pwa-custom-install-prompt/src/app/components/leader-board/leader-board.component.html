@@ -1,0 +1,14 @@
+<div class="leaderboard">
+  <h1>Leaderboard</h1>
+  <ol>
+    <ng-container *ngIf="scores && scores.length; else noContent">
+      <li *ngFor="let entry of scores | slice: 0:5">
+        <mark>{{ entry.name }}</mark>
+        <small>{{ entry.score }}</small>
+      </li>
+    </ng-container>
+    <ng-template #noContent>
+      <div class="leaderboard__no-content">No scores to show</div>
+    </ng-template>
+  </ol>
+</div>
