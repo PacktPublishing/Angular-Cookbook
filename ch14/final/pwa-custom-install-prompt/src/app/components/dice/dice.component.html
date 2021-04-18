@@ -1,0 +1,15 @@
+<!-- Component inspired by https://codesandbox.io/s/xjk3xqnprw?file=/styles.css:117-271 -->
+<div class="die-container">
+  <ol
+    class="die-container__die die-container__die--{{ rollTransition }}"
+    [attr.data-roll]="selectedSide.value"
+  >
+    <li
+      class="die-container__die__item"
+      *ngFor="let side of dice.sides"
+      [attr.data-side]="side.value"
+    >
+      <span class="dot" *ngFor="let dot of side.dots"></span>
+    </li>
+  </ol>
+</div>

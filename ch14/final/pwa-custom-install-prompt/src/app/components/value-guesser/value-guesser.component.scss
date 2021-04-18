@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+.values {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  &__value-box {
+    width: 5rem;
+    height: 5rem;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    cursor: pointer;
+    &--selected,
+    &:hover {
+      background-color: #007bff;
+    }
+  }
+}

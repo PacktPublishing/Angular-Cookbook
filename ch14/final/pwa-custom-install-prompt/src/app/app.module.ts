@@ -13,6 +13,9 @@ import { GameStepperComponent } from './components/game-stepper/game-stepper.com
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { InstallablePromptComponent } from './core/components/installable-prompt/installable-prompt.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GameComponent,
     LeaderBoardComponent,
     GameStepperComponent,
+    InstallablePromptComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +36,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
     BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
