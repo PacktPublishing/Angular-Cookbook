@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "analyzing-accessibility": {
+    "pwa-app-shell": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/analyzing-accessibility",
+            "outputPath": "dist/pwa-app-shell",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "analyzing-accessibility:build"
+            "browserTarget": "pwa-app-shell:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "analyzing-accessibility:build:production"
+              "browserTarget": "pwa-app-shell:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "analyzing-accessibility:build"
+            "browserTarget": "pwa-app-shell:build"
           }
         },
         "lint": {
@@ -93,5 +93,5 @@
       }
     }
   },
-  "defaultProject": "analyzing-accessibility"
+  "defaultProject": "pwa-app-shell"
 }

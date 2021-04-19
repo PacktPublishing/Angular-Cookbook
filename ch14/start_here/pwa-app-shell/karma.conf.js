@@ -25,10 +25,7 @@ module.exports = function (config) {
       suppressAll: true, // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(
-        __dirname,
-        './coverage/analyzing-accessibility'
-      ),
+      dir: require('path').join(__dirname, './coverage/pwa-app-shell'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }],
     },

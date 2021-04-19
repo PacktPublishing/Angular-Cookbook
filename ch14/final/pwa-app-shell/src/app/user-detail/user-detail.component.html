@@ -1,0 +1,18 @@
+<div class="user-detail">
+  <div class="main-content user-card">
+    <app-user-card *ngIf="user; else loader" [user]="user"></app-user-card>
+  </div>
+
+  <div class="secondary-container">
+    <h4>Similar Users</h4>
+    <div class="similar-users">
+      <ng-container *ngIf="similarUsers; else loader">
+        <app-user-card class="user-card" *ngFor="let user of similarUsers" [user]="user"></app-user-card>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
