@@ -37,7 +37,6 @@ describe('CounterComponent', () => {
     component.reset();
     expect(component.counter).toBe(0);
   });
-
   it('should show an alert when the counter value goes above the MAX_VALUE', () => {
     spyOn(window, 'alert');
     component.counter = component.MAX_VALUE;
@@ -45,7 +44,6 @@ describe('CounterComponent', () => {
     expect(window.alert).toHaveBeenCalledWith('Value too high');
     expect(component.counter).toBe(component.MAX_VALUE);
   });
-
   it('should show an alert when the counter value goes above the MAX_VALUE', () => {
     spyOn(window, 'alert');
     component.counter = component.MIN_VALUE;
@@ -53,19 +51,16 @@ describe('CounterComponent', () => {
     expect(window.alert).toHaveBeenCalledWith('Value too low');
     expect(component.counter).toBe(component.MIN_VALUE);
   });
-
   it('should call the localStorage.getItem method on component init', () => {
     spyOn(localStorage, 'getItem');
     component.ngOnInit();
     expect(localStorage.getItem).toBeCalled();
   });
-
   it('should retrieve the last saved value from localStorage on component init', () => {
     localStorage.setItem('counterValue', '12');
     component.ngOnInit();
     expect(component.counter).toBe(12);
   });
-
   it('should save the new counterValue to localStorage on increment, decrement and reset', () => {
     spyOn(localStorage, 'setItem');
     component.counter = 0;
