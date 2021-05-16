@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
@@ -8,12 +8,18 @@ import { MultTablePipe } from './pipes/mult-table.pipe';
 const pageTitle = 'Unit testing Angular Pipes';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [RouterTestingModule, FormsModule],
-      declarations: [AppComponent, MultiplicationTableComponent, MultTablePipe],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [RouterTestingModule, FormsModule],
+        declarations: [
+          AppComponent,
+          MultiplicationTableComponent,
+          MultTablePipe,
+        ],
+      }).compileComponents();
+    })
+  );
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
