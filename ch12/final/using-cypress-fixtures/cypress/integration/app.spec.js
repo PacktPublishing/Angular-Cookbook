@@ -5,8 +5,8 @@ context('App', () => {
     cy.visit('/');
   });
 
-  it('should have the title "Cypress: Waiting for XHR calls"', () => {
+  it('should have the title "Cypress: Using fixtures to provide mock data"', () => {
     // https://on.cypress.io/title
-    cy.title().should('eq', 'Cypress: Waiting for XHR calls');
+    cy.title().should('eq', 'Cypress: Using fixtures to provide mock data');
   });
 });
