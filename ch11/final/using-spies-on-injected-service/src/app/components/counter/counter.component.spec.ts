@@ -11,11 +11,7 @@ describe('CounterComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CounterComponent],
-      providers: [
-        {
-          provide: CounterService,
-        },
-      ],
+      providers: [CounterService],
     }).compileComponents();
   });
 
