@@ -53,7 +53,7 @@ describe('VersionControlComponent', () => {
     );
     await rfHarness.setNewAppVersion('abcd');
     const isErrorshown = await rfHarness.isVersionErrorShown();
-    expect(isErrorshown).toBe(true);
+    expect(isErrorshown).toBeTruthy();
   });
 
   it('should show the new log in the list after adding submitting a new log', async () => {
