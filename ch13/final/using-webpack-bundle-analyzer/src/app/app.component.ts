@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
-import { format } from 'date-fns';
-import { Scene } from 'three';
+import * as moment from '../lib/moment';
+import * as THREE from 'three';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +13,8 @@ export class AppComponent {
   // DO NOT USE THE CODE BELOW IN PRODUCTION
   // IT WILL CAUSE PERFORMANCE ISSUES
   constructor(private auth: AuthService, private router: Router) {
-    const scene = new Scene();
-    console.log(format(new Date(), 'LLL do yyyy'));
+    const scene = new THREE.Scene();
+    console.log(moment().format('MMM Do YYYY'));
   }
 
   get isLoggedIn() {
