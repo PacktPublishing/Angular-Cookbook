@@ -1,7 +1,12 @@
-import { Component, ElementRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
 import { AppUserCard } from 'src/interfaces/app-user-card.interface';
 import { FocusableOption } from '@angular/cdk/a11y';
-
 @Component({
   selector: 'app-the-amazing-list-item',
   templateUrl: './the-amazing-list-item.component.html',
@@ -14,13 +19,11 @@ import { FocusableOption } from '@angular/cdk/a11y';
 })
 export class TheAmazingListItemComponent implements OnInit, FocusableOption {
   @Input() item: Partial<AppUserCard>;
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef) {}
 
   focus() {
     this.el.nativeElement.focus();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

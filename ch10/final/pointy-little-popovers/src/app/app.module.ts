@@ -18,7 +18,7 @@ import { PopoverPositionalClassDirective } from './directives/popover-positional
     TheAmazingListComponent,
     LoaderComponent,
     TheAmazingListItemComponent,
-    PopoverPositionalClassDirective
+    PopoverPositionalClassDirective,
   ],
   imports: [
     BrowserModule,
@@ -26,9 +26,9 @@ import { PopoverPositionalClassDirective } from './directives/popover-positional
     ReactiveFormsModule,
     HttpClientModule,
     ScrollingModule,
-    OverlayModule
+    OverlayModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

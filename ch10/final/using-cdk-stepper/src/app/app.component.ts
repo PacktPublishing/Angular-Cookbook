@@ -1,5 +1,4 @@
-import { Clipboard } from '@angular/cdk/clipboard';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'Creating a multi-step game with CDK Stepper API';
 
-  constructor(private clipboard: Clipboard) {}
+  constructor() {}
 
   ngOnInit() {}
 }

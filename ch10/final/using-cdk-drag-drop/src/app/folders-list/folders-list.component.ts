@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APP_DATA } from '../constants/data';
+import { FileIconService } from '../core/services/file-icon.service';
 import { IFolder } from '../interfaces';
 import { faArrowAltCircleUp } from '@fortawesome/free-regular-svg-icons';
 import {
@@ -7,7 +8,6 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
-import { FileIconService } from '../core/services/file-icon.service';
 
 @Component({
   selector: 'app-folders-list',
