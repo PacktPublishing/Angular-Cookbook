@@ -5,17 +5,15 @@ import { IUser } from '../../interfaces/user.interface';
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
-  styleUrls: ['./user-card.component.scss']
+  styleUrls: ['./user-card.component.scss'],
 })
 export class UserCardComponent implements OnInit {
   @Input('user') user: IUser;
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   cardClicked() {
-    this.router.navigate([`/user/${this.user.login.uuid}`])
+    this.router.navigate([`/user/${this.user.login.uuid}`]);
   }
-
 }

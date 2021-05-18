@@ -3,20 +3,24 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 
-const routes: Routes = [{
-  path: '',
-  redirectTo: '/home',
-  pathMatch: 'full'
-}, {
-  path: 'home',
-  component: HomeComponent
-}, {
-  path: 'user/:uuid',
-  component: UserDetailComponent
-}];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    path: 'user/:uuid',
+    component: UserDetailComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

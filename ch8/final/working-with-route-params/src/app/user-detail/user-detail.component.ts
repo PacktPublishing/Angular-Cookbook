@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from '../core/services/user.service';
 import { IUser } from '../core/interfaces/user.interface';
-import { mergeMap, switchMap, takeWhile } from 'rxjs/operators';
+import { mergeMap, takeWhile } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -43,6 +43,6 @@ export class UserDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.componentIsAlive = true;
+    this.componentIsAlive = false;
   }
 }
