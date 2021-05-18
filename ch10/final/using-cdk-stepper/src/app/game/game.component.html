@@ -1,6 +1,6 @@
 <app-game-stepper [linear]="true">
   <cdk-step [completed]="!!nameForm.get('name').value">
-    <ng-template cdkStepLabel>📙 Enter your name</ng-template>
+    <ng-template cdkStepLabel> Enter your name</ng-template>
     <form (ngSubmit)="submitName()" [formGroup]="nameForm">
       <div class="mb-3" *ngIf="nameForm.get('name') as nameControl">
         <label for="nameInput" class="form-label">Player Name</label>
@@ -26,7 +26,7 @@
   </cdk-step>
   <cdk-step [completed]="isCorrectGuess !== null">
     <ng-template cdkStepLabel
-      >❓ Guess what the value will be when the die is rolled</ng-template
+      >Guess what the value will be when the die is rolled</ng-template
     >
     <app-value-guesser (valueGuessed)="rollTheDice($event)"></app-value-guesser>
     <app-dice (diceRolled)="showResult($event)"></app-dice>
@@ -40,7 +40,7 @@
     </ng-container>
   </cdk-step>
   <cdk-step>
-    <ng-template cdkStepLabel>😎 Results</ng-template>
+    <ng-template cdkStepLabel> Results</ng-template>
     <app-leader-board [scores]="scores"></app-leader-board>
   </cdk-step>
 </app-game-stepper>
