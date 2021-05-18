@@ -1,6 +1,6 @@
 <app-game-stepper [linear]="true">
   <cdk-step [completed]="!!nameForm.get('name').value">
-    <ng-template cdkStepLabel> Enter your name</ng-template>
+    <ng-template cdkStepLabel>Enter your name</ng-template>
     <form (ngSubmit)="submitName()" [formGroup]="nameForm">
       <div class="mb-3" *ngIf="nameForm.get('name') as nameControl">
         <label for="nameInput" class="form-label">Player Name</label>

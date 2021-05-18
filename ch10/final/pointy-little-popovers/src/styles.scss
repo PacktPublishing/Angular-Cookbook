@@ -96,7 +96,6 @@
   min-height: 1px;
 }
 
-
 .menu-popover {
   min-width: 150px;
   height: auto;
@@ -106,7 +105,7 @@
   &::before {
     top: -10px;
     border-width: 0px 10px 10px 10px;
-    border-color: transparent transparent white  transparent;
+    border-color: transparent transparent white transparent;
     position: absolute;
     content: '';
     right: 5%;

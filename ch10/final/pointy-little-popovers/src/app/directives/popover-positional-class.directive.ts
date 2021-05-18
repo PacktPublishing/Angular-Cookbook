@@ -1,7 +1,14 @@
-import { AfterViewInit, ChangeDetectorRef, Directive, Input, Renderer2, SimpleChanges } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Directive,
+  Input,
+  Renderer2,
+  SimpleChanges,
+} from '@angular/core';
 
 @Directive({
-  selector: '[appPopoverPositionalClass]'
+  selector: '[appPopoverPositionalClass]',
 })
 export class PopoverPositionalClassDirective implements AfterViewInit {
   @Input() originY: string;
@@ -12,11 +19,11 @@ export class PopoverPositionalClassDirective implements AfterViewInit {
 
   ngAfterViewInit() {
     const requiredProps = ['originY', 'targetSelector'];
-    requiredProps.forEach(prop => {
+    requiredProps.forEach((prop) => {
       if (this[prop] === undefined) {
         throw new Error(`${prop} is required`);
       }
-    })
+    });
     this.inverseClass = this.inverseClass || `${this.targetSelector}-inverse`;
   }
 
@@ -43,5 +50,4 @@ export class PopoverPositionalClassDirective implements AfterViewInit {
     }
     this.cdRef.markForCheck();
   }
-
 }

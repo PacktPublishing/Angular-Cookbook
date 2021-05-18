@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClipboardModule } from '@angular/cdk/clipboard';
 import { FolderComponent } from './components/folder/folder.component';
 import { FoldersListComponent } from './folders-list/folders-list.component';
 import { FileComponent } from './components/file/file.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,13 +16,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     FoldersListComponent,
     FileComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ClipboardModule,
-    FontAwesomeModule,
-    DragDropModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, DragDropModule],
   providers: [],
   bootstrap: [AppComponent],
 })

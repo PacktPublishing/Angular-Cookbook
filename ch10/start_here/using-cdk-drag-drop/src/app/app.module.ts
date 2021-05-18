@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClipboardModule } from '@angular/cdk/clipboard';
 import { FolderComponent } from './components/folder/folder.component';
 import { FoldersListComponent } from './folders-list/folders-list.component';
 import { FileComponent } from './components/file/file.component';
@@ -13,15 +12,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppComponent,
     FolderComponent,
     FoldersListComponent,
-    FileComponent
+    FileComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ClipboardModule,
-    FontAwesomeModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

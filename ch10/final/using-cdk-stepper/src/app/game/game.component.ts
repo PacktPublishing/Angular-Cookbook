@@ -1,11 +1,12 @@
+import { CdkStepper } from '@angular/cdk/stepper';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CdkStepper } from '@angular/cdk/stepper';
 import { DiceComponent } from '../components/dice/dice.component';
 import { ValueGuesserComponent } from '../components/value-guesser/value-guesser.component';
-import { IDiceSide } from '../interfaces/dice.interface';
 import { LeaderboardService } from '../core/services/leaderboard.service';
+import { IDiceSide } from '../interfaces/dice.interface';
 import { IScore } from '../interfaces/score.interface';
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -16,13 +17,12 @@ export class GameComponent implements OnInit {
   @ViewChild(DiceComponent) diceComponent: DiceComponent;
   @ViewChild(ValueGuesserComponent)
   valueGuesserComponent: ValueGuesserComponent;
+  guessedValue = null;
+  isCorrectGuess = null;
   nameForm = new FormGroup({
     name: new FormControl('', Validators.required),
   });
-  guessedValue = null;
-  isCorrectGuess = null;
   scores: IScore[] = [];
-
   constructor(private leaderboardService: LeaderboardService) {}
 
   ngOnInit(): void {
@@ -32,6 +32,7 @@ export class GameComponent implements OnInit {
   submitName() {
     this.stepper.next();
   }
+
   rollTheDice(guessedValue) {
     this.isCorrectGuess = null;
     this.guessedValue = guessedValue;

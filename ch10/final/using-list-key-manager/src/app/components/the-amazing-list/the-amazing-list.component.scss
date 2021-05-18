@@ -9,4 +9,35 @@
   min-width: 400px;
   max-width: 960px;
   width: 100%;
+  &__item {
+    transition: all ease 1s;
+    cursor: pointer;
+    &:hover {
+      background-color: #ececec;
+    }
+    &__primary,
+    &__secondary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__info {
+        font-size: small;
+      }
+    }
+
+    &__primary {
+      &__info {
+        &:nth-child(1) {
+          font-weight: bold;
+          font-size: larger;
+        }
+      }
+    }
+
+    img {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+  }
 }

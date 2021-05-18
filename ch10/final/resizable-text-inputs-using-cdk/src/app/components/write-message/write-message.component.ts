@@ -1,4 +1,3 @@
-import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import {
   Component,
   OnInit,
@@ -8,6 +7,8 @@ import {
 } from '@angular/core';
 import { ChatService } from 'src/app/core/services/chat.service';
 import { Message } from '../../models/message';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
+
 @Component({
   selector: 'app-write-message',
   templateUrl: './write-message.component.html',
