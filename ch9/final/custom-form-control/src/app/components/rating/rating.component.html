@@ -1,14 +1,16 @@
 <div class="rating">
   <div
     class="rating__star"
-    [ngClass]="{'rating__star--active': (
-      (!isMouseOver && value  >= star) ||
-      (isMouseOver && hoveredRating  >= star)
-    )}"
+    [ngClass]="{
+      'rating__star--active':
+        (!isMouseOver && value >= star) ||
+        (isMouseOver && hoveredRating >= star)
+    }"
     (mouseenter)="onRatingMouseEnter(star)"
     (mouseleave)="onRatingMouseLeave()"
     (click)="selectRating(star)"
-    *ngFor="let star of [1, 2, 3, 4, 5]; let i = index;">
+    *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+  >
     <i class="fa fa-star"></i>
   </div>
 </div>

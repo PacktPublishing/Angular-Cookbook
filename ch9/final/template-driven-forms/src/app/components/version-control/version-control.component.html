@@ -1,4 +1,6 @@
 <div class="version-control">
-  <app-release-form (newReleaseLog)="addNewReleaseLog($event)"></app-release-form>
+  <app-release-form
+    (newReleaseLog)="addNewReleaseLog($event)"
+  ></app-release-form>
   <app-release-logs [logs]="releaseLogs"></app-release-logs>
 </div>

@@ -11,35 +11,33 @@ import { debounceTime, takeWhile } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   users: IUser[];
-  searchForm: FormGroup
+  searchForm: FormGroup;
   componentAlive: boolean;
   searchDebounceTime = 300;
-  constructor(
-    private userService: UserService
-  ) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.componentAlive = true;
     this.searchForm = new FormGroup({
-      username: new FormControl('', [])
-    })
+      username: new FormControl('', []),
+    });
     this.searchUsers();
-    this.searchForm.get('username').valueChanges
-      .pipe(
+    this.searchForm
+      .get('username')
+      .valueChanges.pipe(
         debounceTime(this.searchDebounceTime),
         takeWhile(() => !!this.componentAlive)
       )
       .subscribe(() => {
         this.searchUsers();
-      })
+      });
   }
 
   searchUsers() {
     const query = this.searchForm.get('username').value;
-    this.userService.searchUsers(query)
-      .subscribe(users => {
-        this.users = users;
-      });
+    this.userService.searchUsers(query).subscribe((users) => {
+      this.users = users;
+    });
   }
 
   ngOnDestroy() {}
