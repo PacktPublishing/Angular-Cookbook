@@ -1,15 +1,20 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  OnDestroy,
+} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { takeWhile } from 'rxjs/operators';
 import { IReleaseLog, ReleaseLog } from 'src/app/classes/release-log';
 import { Apps } from 'src/app/constants/apps';
 import { REGEXES } from 'src/app/constants/regexes';
 import { VersionService } from 'src/app/core/services/version.service';
-
 @Component({
   selector: 'app-release-form',
   templateUrl: './release-form.component.html',
-  styleUrls: ['./release-form.component.scss']
+  styleUrls: ['./release-form.component.scss'],
 })
 export class ReleaseFormComponent implements OnInit, OnDestroy {
   @Output() newReleaseLog = new EventEmitter<IReleaseLog>();
@@ -22,21 +27,22 @@ export class ReleaseFormComponent implements OnInit, OnDestroy {
       Validators.required,
       Validators.pattern(this.versionInputRegex),
     ]),
-  })
-  constructor(private versionService: VersionService) { }
+  });
+  constructor(private versionService: VersionService) {}
 
   ngOnInit(): void {
     this.isComponentAlive = true;
-    this.releaseForm.get('version').setAsyncValidators(
-      this.versionService.versionValidator(
-        this.releaseForm.get('app')
-      )
-    )
-    this.releaseForm.get('app').valueChanges
-      .pipe(takeWhile(() => this.isComponentAlive))
+    this.releaseForm
+      .get('version')
+      .setAsyncValidators(
+        this.versionService.versionValidator(this.releaseForm.get('app'))
+      );
+    this.releaseForm
+      .get('app')
+      .valueChanges.pipe(takeWhile(() => this.isComponentAlive))
       .subscribe(() => {
         this.releaseForm.get('version').updateValueAndValidity();
-      })
+      });
   }
 
   ngOnDestroy() {
@@ -48,10 +54,8 @@ export class ReleaseFormComponent implements OnInit, OnDestroy {
       return;
     }
     const { app, version } = form.value;
-    console.log({app, version});
-    const newLog: ReleaseLog = new ReleaseLog(app, version)
+    console.log({ app, version });
+    const newLog: ReleaseLog = new ReleaseLog(app, version);
     this.newReleaseLog.emit(newLog);
   }
-
-
 }

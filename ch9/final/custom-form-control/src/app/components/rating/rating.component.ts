@@ -1,35 +1,35 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, OnInit, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-rating',
   templateUrl: './rating.component.html',
   styleUrls: ['./rating.component.scss'],
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => RatingComponent),
-    multi: true
-  }]
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => RatingComponent),
+      multi: true,
+    },
+  ],
 })
 export class RatingComponent implements OnInit, ControlValueAccessor {
-  value = null;
-  hoveredRating = null;
+  value = 2;
+  hoveredRating = 2;
   isMouseOver = false;
   @Input() disabled = false;
-  constructor() { }
 
-  onChange: any = () => { };
-  onTouched: any = () => { };
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  onChange: any = () => {};
+  onTouched: any = () => {};
 
+  ngOnInit(): void {}
   onRatingMouseEnter(rating: number) {
     if (this.disabled) return;
     this.hoveredRating = rating;
     this.isMouseOver = true;
   }
-
   onRatingMouseLeave() {
     this.hoveredRating = null;
     this.isMouseOver = false;
@@ -41,7 +41,7 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
     this.onChange(rating);
   }
 
-  registerOnChange(fn: any){
+  registerOnChange(fn: any) {
     this.onChange = fn;
   }
 
@@ -56,5 +56,4 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
   writeValue(value: number) {
     this.value = value;
   }
-
 }

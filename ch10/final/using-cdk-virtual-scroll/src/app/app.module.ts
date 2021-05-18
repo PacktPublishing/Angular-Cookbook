@@ -10,19 +10,15 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TheAmazingListComponent,
-    LoaderComponent
-  ],
+  declarations: [AppComponent, TheAmazingListComponent, LoaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ScrollingModule
+    ScrollingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
