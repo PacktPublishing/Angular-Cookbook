@@ -4,11 +4,10 @@ import { IUser } from '../core/interfaces/user.interface';
 import { mergeMap, switchMap, takeWhile } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.scss']
+  styleUrls: ['./user-detail.component.scss'],
 })
 export class UserDetailComponent implements OnInit, OnDestroy {
   user: IUser;
@@ -22,28 +21,28 @@ export class UserDetailComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.componentIsAlive = true;
     this.route.paramMap
-      .pipe(
-        takeWhile(() => this.componentIsAlive)
-      )
+      .pipe(takeWhile(() => this.componentIsAlive))
       .subscribe((params) => {
         const userId = params.get('uuid');
         this.getUserAndSimilarUsers(userId);
-      })
+      });
   }
 
   getUserAndSimilarUsers(userId) {
-    this.userService.getUser(userId)
+    this.userService
+      .getUser(userId)
       .pipe(
         mergeMap((user: IUser) => {
           this.user = user;
           return this.userService.getSimilarUsers(userId);
         })
-      ).subscribe((similarUsers: IUser[]) => {
+      )
+      .subscribe((similarUsers: IUser[]) => {
         this.similarUsers = similarUsers;
-      })
+      });
   }
 
   ngOnDestroy() {
+    this.componentIsAlive = true;
   }
-
 }
