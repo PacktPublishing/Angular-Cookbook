@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:cypress": "cypress open",
-    "cypress:test": "concurrently 'npm run start' 'npm run start:cypress'"
+    "cypress:test": "concurrently \"npm run start\" \"npm run start:cypress\""
   },
   "private": true,
   "dependencies": {
