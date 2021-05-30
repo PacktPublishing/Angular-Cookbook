@@ -9,7 +9,9 @@
 
 <style>
   :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol';
     font-size: 14px;
     color: #333;
     box-sizing: border-box;
@@ -179,7 +181,7 @@
   }
 
   .terminal::before {
-    content: "\2022 \2022 \2022";
+    content: '\2022 \2022 \2022';
     position: absolute;
     top: 0;
     left: 0;
@@ -194,7 +196,7 @@
   }
 
   .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     color: white;
     padding: 0 1rem 1rem;
     margin: 0;
@@ -238,18 +240,19 @@
     align-items: center;
     font-size: 12px;
     padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
+    border: 1px solid rgba(27, 31, 35, 0.2);
     border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
     margin-left: 4px;
     font-weight: 600;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+      sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   }
 
   .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
-    background-position: -.5em;
+    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+    border-color: rgba(27, 31, 35, 0.35);
+    background-position: -0.5em;
   }
 
   .github-star-badge .material-icons {
@@ -266,11 +269,9 @@
     width: 1920px;
   }
 
-
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
-
-    .card-container > *:not(.circle-link) ,
+    .card-container > *:not(.circle-link),
     .terminal {
       width: 100%;
     }
@@ -312,16 +313,24 @@
 <div class="content" role="main">
   <div class="add-section">
     <div class="input-group">
-      <select [(ngModel)]="selectedFruit" class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+      <select
+        [(ngModel)]="selectedFruit"
+        class="custom-select"
+        id="inputGroupSelect04"
+        aria-label="Example select with button addon"
+      >
         <option selected value="">Choose...</option>
-        <option *ngFor="let fruit of fruits" value="{{fruit}}">{{fruit}}</option>
+        <option *ngFor="let fruit of fruits" value="{{ fruit }}">
+          {{ fruit }}
+        </option>
       </select>
       <div class="input-group-append">
         <button
           [disabled]="!selectedFruit"
           class="btn btn-outline-secondary"
           type="button"
-          (click)="addSelectedFruitToBucket()">
+          (click)="addSelectedFruitToBucket()"
+        >
           Add to Bucket
         </button>
       </div>
@@ -331,31 +340,23 @@
     <h2>Bucket <i class="material-icons">shopping_cart</i></h2>
     <div class="fruits">
       <ng-container *ngIf="bucket.length > 0; else bucketEmptyMessage">
-        <div class="fruits__item" *ngFor="let item of bucket;">
-          <div class="fruits__item__title">{{item.name}}</div>
-          <div class="fruites__item__delete-icon" (click)="deleteFromBucket(item)">
+        <div class="fruits__item" *ngFor="let item of bucket">
+          <div class="fruits__item__title">{{ item.name }}</div>
+          <div
+            class="fruites__item__delete-icon"
+            (click)="deleteFromBucket(item)"
+          >
             <div class="material-icons">delete</div>
           </div>
         </div>
       </ng-container>
+      <ng-template #bucketEmptyMessage>
+        <div class="fruits__no-items-msg">
+          No items in bucket. Add some fruits!
+        </div>
+      </ng-template>
     </div>
   </div>
-  <ng-template #bucketEmptyMessage>
-    <div class="fruits__no-items-msg">
-      No items in bucket. Add some fruits!
-    </div>
-  </ng-template>
-
 </div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
 
 <router-outlet></router-outlet>
