@@ -3,7 +3,7 @@ import { Logger } from '../interfaces/logger';
 
 @Injectable()
 export class LoggerService implements Logger {
-  constructor() { }
+  constructor() {}
   info(val) {
     this.saveLog(val, 'info');
   }
