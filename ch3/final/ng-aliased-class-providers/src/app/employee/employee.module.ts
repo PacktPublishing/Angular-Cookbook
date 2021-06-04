@@ -8,14 +8,12 @@ import { EmployeeBucketService } from './services/employee-bucket.service';
 
 @NgModule({
   declarations: [EmployeeComponent],
-  imports: [
-    CommonModule,
-    EmployeeRoutingModule,
-    SharedModule
+  imports: [CommonModule, EmployeeRoutingModule, SharedModule],
+  providers: [
+    {
+      provide: BucketService,
+      useClass: EmployeeBucketService,
+    },
   ],
-  providers: [{
-    provide: BucketService,
-    useClass: EmployeeBucketService
-  }]
 })
-export class EmployeeModule { }
+export class EmployeeModule {}
