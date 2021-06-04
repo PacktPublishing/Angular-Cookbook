@@ -7,10 +7,7 @@ import { NotificationsManagerComponent } from './components/notifications-manage
 
 @NgModule({
   declarations: [VersioningComponent, NotificationsManagerComponent],
-  imports: [
-    CommonModule,
-    VersioningRoutingModule,
-  ],
-  providers: []
+  imports: [CommonModule, VersioningRoutingModule],
+  providers: [],
 })
-export class VersioningModule { }
+export class VersioningModule {}

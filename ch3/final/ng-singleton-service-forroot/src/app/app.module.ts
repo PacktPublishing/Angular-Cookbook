@@ -7,16 +7,9 @@ import { NotificationsButtonComponent } from './components/notifications-button/
 import { ServicesModule } from './services/services.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NotificationsButtonComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ServicesModule.forRoot()
-  ],
+  declarations: [AppComponent, NotificationsButtonComponent],
+  imports: [BrowserModule, AppRoutingModule, ServicesModule.forRoot()],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
