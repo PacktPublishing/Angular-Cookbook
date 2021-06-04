@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { VersionControlComponent } from './version-control.component';
 
@@ -6,7 +6,7 @@ describe('VersionControlComponent', () => {
   let component: VersionControlComponent;
   let fixture: ComponentFixture<VersionControlComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ VersionControlComponent ]
     })
