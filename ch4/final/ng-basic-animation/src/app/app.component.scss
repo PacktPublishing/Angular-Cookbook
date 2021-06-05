@@ -1,0 +1,30 @@
+.type-picker {
+  margin-bottom: 16px;
+  text-align: center;
+  &__options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__option {
+      &:nth-child(1) {
+        margin-right: 8px;
+      }
+      &:nth-child(2) {
+        margin-left: 8px;
+      }
+      &__btn {
+        display: flex;
+        align-items: center;
+        min-width: 40px;
+        text-align: left;
+        justify-content: center;
+        &--active {
+          [class^='icon-'],
+          [class*=' icon-'] {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<div class="buckets" *ngIf="$bucket | async as bucket">
+  <h4>Bucket <i class="material-icons">shopping_cart</i></h4>
+  <div class="add-section">
+    <div class="input-group">
+      <select
+        [(ngModel)]="selectedFruit"
+        class="custom-select"
+        id="inputGroupSelect04"
+        aria-label="Example select with button addon"
+      >
+        <option selected value="">Choose...</option>
+        <option *ngFor="let fruit of fruits" value="{{ fruit }}">
+          {{ fruit }}
+        </option>
+      </select>
+      <div class="input-group-append">
+        <button
+          [disabled]="!selectedFruit"
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="addSelectedFruitToBucket()"
+        >
+          Add to Bucket
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="fruits" [@listAnimation]="bucket.length">
+    <ng-container *ngIf="bucket.length > 0; else bucketEmptyMessage">
+      <div class="fruits__item" *ngFor="let item of bucket">
+        <div class="fruits__item__title">{{ item.name }}</div>
+        <div
+          class="fruites__item__delete-icon"
+          (click)="deleteFromBucket(item)"
+        >
+          <div class="material-icons">delete</div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<ng-template #bucketEmptyMessage>
+  <div class="fruits__no-items-msg">No items in bucket. Add some fruits!</div>
+</ng-template>
