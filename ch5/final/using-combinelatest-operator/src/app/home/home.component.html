@@ -1,0 +1,57 @@
+<div class="home" [formGroup]="boxForm">
+  <div class="row">
+    <div class="col">
+      <label for="bgColorSelect">Background Color</label>
+      <select
+        id="bgColorSelect"
+        class="custom-select"
+        formControlName="backgroundColor"
+      >
+        <option value="">Open this select menu</option>
+        <option *ngFor="let option of colorOptions" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="textColorSelect">Text Color</label>
+      <select
+        id="textColorSelect"
+        class="custom-select"
+        formControlName="textColor"
+      >
+        <option value="">Open this select menu</option>
+        <option *ngFor="let option of colorOptions" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="borderRadiusSelect">Border Radius</label>
+      <select
+        id="borderRadiusSelect"
+        class="custom-select"
+        formControlName="borderRadius"
+      >
+        <option value="">Open this select menu</option>
+        <option *ngFor="let option of borderRadiusOptions" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="sizeSelect">Size</label>
+      <select id="sizeSelect" class="custom-select" formControlName="size">
+        <option value="">Open this select menu</option>
+        <option *ngFor="let option of sizeOptions" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row" *ngIf="boxStyles$ | async as bStyles">
+    <div class="box" [ngStyle]="bStyles">
+      <div class="box__text">Hello World!</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="home">
+  <div class="cards-container">
+    <div class="input-stream">
+      <div class="input-stream__item" *ngFor="let item of inputStreamData">
+        {{ item }}
+      </div>
+    </div>
+    <div class="output-stream">
+      <div
+        class="input-stream__item"
+        *ngFor="let item of streamsOutput$ | async"
+      >
+        {{ item }}
+      </div>
+    </div>
+  </div>
+</div>
