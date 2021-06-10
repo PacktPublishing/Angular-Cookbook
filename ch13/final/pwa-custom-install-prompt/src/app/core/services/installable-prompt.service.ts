@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { InstallablePromptComponent } from '../components/installable-prompt/installable-prompt.component';
+
 @Injectable({
   providedIn: 'root',
 })
 export class InstallablePromptService {
   installablePrompt;
+
   constructor(private dialog: MatDialog) {
     this.init();
   }
@@ -17,14 +19,6 @@ export class InstallablePromptService {
     );
   }
 
-  handleInstallPrompt(e) {
-    e.preventDefault();
-    // Stash the event so it can be triggered later.
-    this.installablePrompt = e;
-    console.log('installable prompt event fired');
-    window.removeEventListener('beforeinstallprompt', this.handleInstallPrompt);
-  }
-
   async showPrompt() {
     if (!this.installablePrompt) {
       return;
@@ -32,7 +26,6 @@ export class InstallablePromptService {
     const dialogRef = this.dialog.open(InstallablePromptComponent, {
       width: '300px',
     });
-
     dialogRef.afterClosed().subscribe(async (result) => {
       if (!result) {
         this.installablePrompt = null;
@@ -43,5 +36,13 @@ export class InstallablePromptService {
       console.log(`User response to the install prompt: ${outcome}`);
       this.installablePrompt = null;
     });
+  }
+
+  handleInstallPrompt(e) {
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    this.installablePrompt = e;
+    console.log('installable prompt event fired');
+    window.removeEventListener('beforeinstallprompt', this.handleInstallPrompt);
   }
 }
