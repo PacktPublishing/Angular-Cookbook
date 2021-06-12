@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Creating an App Shell for your PWA</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#1976d2">
+  <link rel="stylesheet" href="styles.31d6cfe0d16ae931b73c.css"><style ng-transition="serverApp">.toolbar[_ngcontent-sc54]   a[_ngcontent-sc54]{color:#fff;text-decoration:none}</style><style ng-transition="serverApp">[_nghost-sc54] {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol';
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1[_ngcontent-sc54], h2[_ngcontent-sc54], h3[_ngcontent-sc54], h4[_ngcontent-sc54], h5[_ngcontent-sc54], h6[_ngcontent-sc54] {
+    margin: 8px 0;
+  }
+
+  p[_ngcontent-sc54] {
+    margin: 0;
+  }
+
+  .spacer[_ngcontent-sc54] {
+    flex: 1;
+  }
+
+  .toolbar[_ngcontent-sc54] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar[_ngcontent-sc54]   img[_ngcontent-sc54] {
+    margin: 0 16px;
+  }
+
+  .toolbar[_ngcontent-sc54]   .notif-bell[_ngcontent-sc54] {
+    margin: 0 20px 0 16px;
+  }
+
+  .content[_ngcontent-sc54] {
+    display: flex;
+    margin: 120px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+
+  svg.material-icons[_ngcontent-sc54] {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons[_ngcontent-sc54]:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card[_ngcontent-sc54]   svg.material-icons[_ngcontent-sc54]   path[_ngcontent-sc54] {
+    fill: #888;
+  }
+
+  .card-container[_ngcontent-sc54] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card[_ngcontent-sc54] {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container[_ngcontent-sc54]   .card[_ngcontent-sc54]:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small[_ngcontent-sc54] {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card-container[_ngcontent-sc54]   .card[_ngcontent-sc54]:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container[_ngcontent-sc54]   .card[_ngcontent-sc54]:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+
+  .card-container[_ngcontent-sc54]   .card[_ngcontent-sc54]:not(.highlight-card):hover   .material-icons[_ngcontent-sc54]   path[_ngcontent-sc54] {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card[_ngcontent-sc54] {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card[_ngcontent-sc54]   span[_ngcontent-sc54] {
+    margin-left: 60px;
+  }
+
+  svg#rocket[_ngcontent-sc54] {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke[_ngcontent-sc54] {
+    height: calc(100vh - 95px);
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a[_ngcontent-sc54], a[_ngcontent-sc54]:visited, a[_ngcontent-sc54]:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a[_ngcontent-sc54]:hover {
+    color: #125699;
+  }
+
+  .terminal[_ngcontent-sc54] {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+
+  .terminal[_ngcontent-sc54]::before {
+    content: '\2022 \2022 \2022';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(58, 58, 58);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .terminal[_ngcontent-sc54]   pre[_ngcontent-sc54] {
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+
+  .circle-link[_ngcontent-sc54] {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+
+  .circle-link[_ngcontent-sc54]:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  footer[_ngcontent-sc54] {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+  footer[_ngcontent-sc54]   a[_ngcontent-sc54] {
+    display: flex;
+    align-items: center;
+  }
+
+  .github-star-badge[_ngcontent-sc54] {
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(27, 31, 35, 0.2);
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+    margin-left: 4px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+      sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  }
+
+  .github-star-badge[_ngcontent-sc54]:hover {
+    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+    border-color: rgba(27, 31, 35, 0.35);
+    background-position: -0.5em;
+  }
+
+  .github-star-badge[_ngcontent-sc54]   .material-icons[_ngcontent-sc54] {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  svg#clouds[_ngcontent-sc54] {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+  
+  @media screen and (max-width: 767px) {
+    .card-container[_ngcontent-sc54]    > *[_ngcontent-sc54]:not(.circle-link), .terminal[_ngcontent-sc54] {
+      width: 100%;
+    }
+
+    .card[_ngcontent-sc54]:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card[_ngcontent-sc54]   span[_ngcontent-sc54] {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke[_ngcontent-sc54] {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke[_ngcontent-sc54] {
+      display: none;
+      visibility: hidden;
+    }
+  }</style><style ng-transition="serverApp"></style><style ng-transition="serverApp">[_nghost-sc53]{display:block;width:100%}.home[_ngcontent-sc53]{text-align:center}.home[_ngcontent-sc53]   .secondary-container[_ngcontent-sc53]{margin-top:30px;display:flex;flex-direction:column}.home[_ngcontent-sc53]   .secondary-container[_ngcontent-sc53]   .users[_ngcontent-sc53]{display:flex;flex-wrap:wrap;justify-content:center;height:100%}.home[_ngcontent-sc53]   .secondary-container[_ngcontent-sc53]   .users[_ngcontent-sc53]   app-user-card[_ngcontent-sc53]{margin:0 20px 20px 0}</style><style ng-transition="serverApp">[_nghost-sc16]{display:block}.user-card[_ngcontent-sc16]{text-align:center;margin-right:30px;min-width:240px;width:240px;cursor:pointer}.user-card[_ngcontent-sc16], .user-card[_ngcontent-sc16]   .card[_ngcontent-sc16]{height:100%}.user-card[_ngcontent-sc16]:last-child{margin-right:0}</style></head>
+  <body>
+    <app-root _nghost-sc54="" ng-version="12.0.4"><div _ngcontent-sc54="" role="banner" class="toolbar"><a _ngcontent-sc54="" routerlink="/" href="/"><img _ngcontent-sc54="" width="40" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="><span _ngcontent-sc54="">Creating an App Shell for your PWA</span></a><div _ngcontent-sc54="" class="spacer"></div></div><div _ngcontent-sc54="" role="main" class="content"><router-outlet _ngcontent-sc54=""></router-outlet><app-app-shell _nghost-sc55=""><app-users _ngcontent-sc55="" _nghost-sc53=""><div _ngcontent-sc53="" class="home"><h2 _ngcontent-sc53="">Users</h2><form _ngcontent-sc53="" novalidate="" class="input-container ng-untouched ng-pristine ng-valid"><div _ngcontent-sc53="" class="input-group mb-3"><input _ngcontent-sc53="" id="searchInput" formcontrolname="username" type="text" placeholder="Search user" aria-label="Username" class="form-control ng-untouched ng-pristine ng-valid" value=""><div _ngcontent-sc53="" class="input-group-append"><button _ngcontent-sc53="" type="submit" id="userSearchSubmit" class="btn btn-outline-secondary"><span _ngcontent-sc53="" class="fa fa-search"></span></button></div></div></form><div _ngcontent-sc53="" class="secondary-container"><div _ngcontent-sc53="" class="users"><app-user-card _ngcontent-sc53="" _nghost-sc16=""><div _ngcontent-sc16="" class="user-card"><div _ngcontent-sc16="" class="card"><img _ngcontent-sc16="" alt="..." class="card-img-top" src="https://randomuser.me/api/portraits/men/9.jpg"><div _ngcontent-sc16="" class="card-body"><h5 _ngcontent-sc16="" class="card-title">Irineu da Rocha</h5><p _ngcontent-sc16="" class="card-text">irineu.darocha@example.com</p><a _ngcontent-sc16="" class="btn btn-primary" href="tel: (04) 4008-4776">(04) 4008-4776</a></div></div><!----></div></app-user-card><app-user-card _ngcontent-sc53="" _nghost-sc16=""><div _ngcontent-sc16="" class="user-card"><div _ngcontent-sc16="" class="card"><img _ngcontent-sc16="" alt="..." class="card-img-top" src="https://randomuser.me/api/portraits/women/74.jpg"><div _ngcontent-sc16="" class="card-body"><h5 _ngcontent-sc16="" class="card-title">آنیتا حسینی</h5><p _ngcontent-sc16="" class="card-text">anyt.hsyny@example.com</p><a _ngcontent-sc16="" class="btn btn-primary" href="tel: 018-24992756">018-24992756</a></div></div><!----></div></app-user-card><app-user-card _ngcontent-sc53="" _nghost-sc16=""><div _ngcontent-sc16="" class="user-card"><div _ngcontent-sc16="" class="card"><img _ngcontent-sc16="" alt="..." class="card-img-top" src="https://randomuser.me/api/portraits/women/45.jpg"><div _ngcontent-sc16="" class="card-body"><h5 _ngcontent-sc16="" class="card-title">Elfie Siegert</h5><p _ngcontent-sc16="" class="card-text">elfie.siegert@example.com</p><a _ngcontent-sc16="" class="btn btn-primary" href="tel: 0630-1857878">0630-1857878</a></div></div><!----></div></app-user-card><app-user-card _ngcontent-sc53="" _nghost-sc16=""><div _ngcontent-sc16="" class="user-card"><div _ngcontent-sc16="" class="card"><img _ngcontent-sc16="" alt="..." class="card-img-top" src="https://randomuser.me/api/portraits/men/85.jpg"><div _ngcontent-sc16="" class="card-body"><h5 _ngcontent-sc16="" class="card-title">Hudson Li</h5><p _ngcontent-sc16="" class="card-text">hudson.li@example.com</p><a _ngcontent-sc16="" class="btn btn-primary" href="tel: (356)-760-9861">(356)-760-9861</a></div></div><!----></div></app-user-card><app-user-card _ngcontent-sc53="" _nghost-sc16=""><div _ngcontent-sc16="" class="user-card"><div _ngcontent-sc16="" class="card"><img _ngcontent-sc16="" alt="..." class="card-img-top" src="https://randomuser.me/api/portraits/women/62.jpg"><div _ngcontent-sc16="" class="card-body"><h5 _ngcontent-sc16="" class="card-title">Indie Hall</h5><p _ngcontent-sc16="" class="card-text">indie.hall@example.com</p><a _ngcontent-sc16="" class="btn btn-primary" href="tel: (378)-918-2714">(378)-918-2714</a></div></div><!----></div></app-user-card><app-user-card _ngcontent-sc53="" _nghost-sc16=""><div _ngcontent-sc16="" class="user-card"><div _ngcontent-sc16="" class="card"><img _ngcontent-sc16="" alt="..." class="card-img-top" src="https://randomuser.me/api/portraits/men/35.jpg"><div _ngcontent-sc16="" class="card-body"><h5 _ngcontent-sc16="" class="card-title">Austrelino Lima</h5><p _ngcontent-sc16="" class="card-text">austrelino.lima@example.com</p><a _ngcontent-sc16="" class="btn btn-primary" href="tel: (67) 6174-9418">(67) 6174-9418</a></div></div><!----></div></app-user-card><app-user-card _ngcontent-sc53="" _nghost-sc16=""><div _ngcontent-sc16="" class="user-card"><div _ngcontent-sc16="" class="card"><img _ngcontent-sc16="" alt="..." class="card-img-top" src="https://randomuser.me/api/portraits/women/31.jpg"><div _ngcontent-sc16="" class="card-body"><h5 _ngcontent-sc16="" class="card-title">Ruby Flores</h5><p _ngcontent-sc16="" class="card-text">ruby.flores@example.com</p><a _ngcontent-sc16="" class="btn btn-primary" href="tel: (421)-419-6113">(421)-419-6113</a></div></div><!----></div></app-user-card><app-user-card _ngcontent-sc53="" _nghost-sc16=""><div _ngcontent-sc16="" class="user-card"><div _ngcontent-sc16="" class="card"><img _ngcontent-sc16="" alt="..." class="card-img-top" src="https://randomuser.me/api/portraits/women/83.jpg"><div _ngcontent-sc16="" class="card-body"><h5 _ngcontent-sc16="" class="card-title">Lexi Keijer</h5><p _ngcontent-sc16="" class="card-text">lexi.keijer@example.com</p><a _ngcontent-sc16="" class="btn btn-primary" href="tel: (342)-755-8725">(342)-755-8725</a></div></div><!----></div></app-user-card><app-user-card _ngcontent-sc53="" _nghost-sc16=""><div _ngcontent-sc16="" class="user-card"><div _ngcontent-sc16="" class="card"><img _ngcontent-sc16="" alt="..." class="card-img-top" src="https://randomuser.me/api/portraits/men/70.jpg"><div _ngcontent-sc16="" class="card-body"><h5 _ngcontent-sc16="" class="card-title">Max Wang</h5><p _ngcontent-sc16="" class="card-text">max.wang@example.com</p><a _ngcontent-sc16="" class="btn btn-primary" href="tel: (040)-042-7991">(040)-042-7991</a></div></div><!----></div></app-user-card><app-user-card _ngcontent-sc53="" _nghost-sc16=""><div _ngcontent-sc16="" class="user-card"><div _ngcontent-sc16="" class="card"><img _ngcontent-sc16="" alt="..." class="card-img-top" src="https://randomuser.me/api/portraits/men/58.jpg"><div _ngcontent-sc16="" class="card-body"><h5 _ngcontent-sc16="" class="card-title">Justin Grewal</h5><p _ngcontent-sc16="" class="card-text">justin.grewal@example.com</p><a _ngcontent-sc16="" class="btn btn-primary" href="tel: 704-296-2887">704-296-2887</a></div></div><!----></div></app-user-card><!----></div><!----></div></div></app-users></app-app-shell><!----></div></app-root>
+    <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <script src="runtime.bf242843208f05a7f5c7.js" defer></script><script src="polyfills.c9bfcae1595fb54f72ce.js" defer></script><script src="main.bfb8d9a38eef05e8826d.js" defer></script>
+
+</body></html>
