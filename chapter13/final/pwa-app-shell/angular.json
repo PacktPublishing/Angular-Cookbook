@@ -25,14 +25,19 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest"
             ],
             "styles": ["src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -64,7 +69,8 @@
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -86,7 +92,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["tsconfig.app.json","tsconfig.spec.json","tsconfig.server.json"],
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
           }
         },
@@ -95,7 +101,10 @@
           "options": {
             "outputPath": "dist/pwa-app-shell/server",
             "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "tsConfig": "tsconfig.server.json",
+            "optimization": false,
+            "sourceMap": true,
+            "extractLicenses": false
           },
           "configurations": {
             "production": {
@@ -106,16 +115,16 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "optimization": true,
               "sourceMap": false,
-              "optimization": true
+              "extractLicenses": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "app-shell": {
           "builder": "@angular-devkit/build-angular:app-shell",
           "options": {
-            "browserTarget": "pwa-app-shell:build",
-            "serverTarget": "pwa-app-shell:server",
             "route": "shell"
           },
           "configurations": {
@@ -123,7 +132,8 @@
               "browserTarget": "pwa-app-shell:build:production",
               "serverTarget": "pwa-app-shell:server:production"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
