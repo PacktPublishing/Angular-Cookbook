@@ -1,0 +1,16 @@
+.content {
+  &__container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__form,
+    app-multiplication-table {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+  }
+}
