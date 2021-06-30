@@ -1,0 +1,11 @@
+.login {
+  max-width: max-content;
+  margin: 0 auto;
+  button {
+    margin-right: 8px;
+    &:nth-child(2) {
+      margin-right: 0;
+      margin-left: 8px;
+    }
+  }
+}

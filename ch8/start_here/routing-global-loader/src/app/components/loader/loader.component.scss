@@ -1,0 +1,42 @@
+:host {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 60px;
+  .progress-horizontal {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 0;
+    background-color: rgba(0,0,0,0.34);
+  }
+
+  .bar-horizontal {
+    width: 50%;
+    height: 100%;
+    margin-left: 0;
+    background-color: #d72054;
+
+    animation-name: spinner;
+    animation-duration: 750ms;
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes spinner {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 50%;
+      margin-left: 50%;
+    }
+    100% {
+      width: 0;
+      margin-left: 100%;
+    }
+  }
+
+}

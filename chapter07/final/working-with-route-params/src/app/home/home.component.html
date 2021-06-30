@@ -1,0 +1,18 @@
+<div class="home">
+  <h2>Users</h2>
+  <form class="input-container" [formGroup]="searchForm" (ngSubmit)="searchUsers()">
+    <div class="input-group mb-3">
+      <input formControlName="username" type="text" class="form-control" placeholder="Search user" aria-label="Username">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit" id="userSearchSubmit">
+          <span class="fa fa-search"></span>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="secondary-container">
+    <div class="users" *ngIf="users">
+      <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
+    </div>
+  </div>
+</div>
