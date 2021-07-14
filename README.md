@@ -40,6 +40,7 @@ constructor() { }
 ```
 
 **Following is what you need for this book:**
+
 The book is for web developers and mobile developers alike with beginner-level Angular experience. Prior experience with using JavaScript and TypeScript is also required to grasp the topics covered in this book more effectively.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-13).
@@ -65,7 +66,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
 ## Get to Know the Author
 **Muhammed Ahsan Ayaz**
-is a Google Developer Expert in Angular and a Senior Software Engineer at Klarna. He has developed several web apps and hybrid mobile applications over six years and has expertise in JavaScript, Angular, Ionic, Node.js, and web technologies. He has contributed to several open-source projects, including Angular CLI and Ionic Core.
+is a Google Developer Expert in Angular and a software architect at Syncron. He has taught programming worldwide for the past 8 years through articles, video content, one-to-one mentoring, and tech talks at different global conferences. He has developed several libraries and plugins used by hundreds of thousands of developers, including ngx-device-detector, which has over 5 million installs and over 2,000 GitHub projects using it. He blogs at https://ahsanayaz.com and has a YouTube channel at https://ahsanayaz.com/youtube, where he regularly uploads video tutorials related to web and mobile app development. Apart from programming, Ahsan likes to travel and play multiplayer video games. He lives in Sweden with his wife.
 
 
 
