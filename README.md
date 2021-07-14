@@ -4,7 +4,7 @@
 
 This is the code repository for [Angular Cookbook](https://www.packtpub.com/product/angular-cookbook/9781838989439?utm_source=github&utm_medium=repository&utm_campaign=9781838989439), published by Packt.
 
-**Over 90 recipes to develop your enterprise-scale Angular (v12+) web development skills**
+**Over 90 recipes to develop your enterprise-scale Angular 12 web development skills**
 
 ## What is this book about?
 
