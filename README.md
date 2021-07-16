@@ -4,7 +4,7 @@
 
 This is the code repository for [Angular Cookbook](https://www.packtpub.com/product/angular-cookbook/9781838989439?utm_source=github&utm_medium=repository&utm_campaign=9781838989439), published by Packt.
 
-**Over 90 recipes to develop your enterprise-scale Angular 12 web development skills**
+**Over 90 recipes to develop your enterprise-scale Angular web development skills**
 
 ## What is this book about?
 
@@ -41,7 +41,7 @@ constructor() { }
 
 **Following is what you need for this book:**
 
-The book is for web developers and mobile developers alike with beginner-level Angular experience. Prior experience with using JavaScript and TypeScript is also required to grasp the topics covered in this book more effectively.
+The book is for intermediate-level Angular web developers looking for actionable solutions to common problems in Angular enterprise development. Mobile developers using Angular technologies will also find this book useful. Working experience with JavaScript and TypeScript is necessary to understand the topics covered in this book more effectively.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-13).
 
@@ -65,7 +65,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 * Angular for Enterprise-Ready Web Applications - Second Edition [[Packt]](https://www.packtpub.com/product/angular-for-enterprise-ready-web-applications-second-edition/9781838648800?utm_source=github&utm_medium=repository&utm_campaign=9781838648800) [[Amazon]](https://www.amazon.com/dp/1838648801)
 
 ## Get to Know the Author
-**Muhammed Ahsan Ayaz**
+**Muhammad Ahsan Ayaz**
 is a Google Developer Expert in Angular and a software architect at Syncron. He has taught programming worldwide for the past 8 years through articles, video content, one-to-one mentoring, and tech talks at different global conferences. He has developed several libraries and plugins used by hundreds of thousands of developers, including ngx-device-detector, which has over 5 million installs and over 2,000 GitHub projects using it. He blogs at https://ahsanayaz.com and has a YouTube channel at https://ahsanayaz.com/youtube, where he regularly uploads video tutorials related to web and mobile app development. Apart from programming, Ahsan likes to travel and play multiplayer video games. He lives in Sweden with his wife.
 
 
