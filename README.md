@@ -1,6 +1,6 @@
 # Angular Cookbook
 
-<a href="https://www.packtpub.com/product/angular-cookbook/9781838989439?utm_source=github&utm_medium=repository&utm_campaign=9781838989439"><img src="asdadsa" alt="Angular Cookbook" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/product/angular-cookbook/9781838989439?utm_source=github&utm_medium=repository&utm_campaign=9781838989439"><img src="https://static.packt-cdn.com/products/9781838989439/cover/smaller" alt="Angular Cookbook" height="256px" align="right"></a>
 
 This is the code repository for [Angular Cookbook](https://www.packtpub.com/product/angular-cookbook/9781838989439?utm_source=github&utm_medium=repository&utm_campaign=9781838989439), published by Packt.
 
