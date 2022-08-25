@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-notifications-manager',
@@ -6,25 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notifications-manager.component.scss']
 })
 export class NotificationsManagerComponent implements OnInit {
-  notificationsCount = 0
+  @Input() Count:any;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   addNotification() {
-    this.notificationsCount++;
+    this.Count++;
   }
 
   removeNotification() {
-    if (this.notificationsCount == 0) {
+    if (this.Count === 0) {
       return;
     }
-    this.notificationsCount--;
+    this.Count--;
   }
 
   resetCount() {
-    this.notificationsCount = 0;
+    this.Count = 0;
   }
 
 }
