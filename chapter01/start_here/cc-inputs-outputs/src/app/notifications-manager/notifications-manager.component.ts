@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-notifications-manager',
@@ -7,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NotificationsManagerComponent implements OnInit {
   @Input() Count:any;
+  @Output() countChanged= new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +16,7 @@ export class NotificationsManagerComponent implements OnInit {
 
   addNotification() {
     this.Count++;
+    this.countChanged.emit(this.Count);
   }
 
   removeNotification() {
@@ -21,10 +24,12 @@ export class NotificationsManagerComponent implements OnInit {
       return;
     }
     this.Count--;
+    this.countChanged.emit(this.Count);
   }
 
   resetCount() {
     this.Count = 0;
+    this.countChanged.emit(this.Count);
   }
 
 }
