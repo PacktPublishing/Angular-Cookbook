@@ -14,7 +14,7 @@ export class GalleryComponent implements OnInit {
   }
 
   generateImage() {
-    return `https://picsum.photos/200/200?ts${Math.random()*30 + 1}`;
+    return `https://loremflickr.com/200/200/nature?lock${Math.random() * 30 + 1}`;
   }
 
 }
