@@ -76,6 +76,11 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
 * Angular for Enterprise-Ready Web Applications - Second Edition [[Packt]](https://www.packtpub.com/product/angular-for-enterprise-ready-web-applications-second-edition/9781838648800?utm_source=github&utm_medium=repository&utm_campaign=9781838648800) [[Amazon]](https://www.amazon.com/dp/1838648801)
 
+## Errata 
+ * Page 19 (Code Snippet 1, line 6):  **this.logs.push('initial version is ${name.trim()}')** _should be_ **this.logs.push( ~ initial version is ${name.trim()} ~)**
+ * Page 19 (Code Snippet 2, line 6):  **this.logs.push('initial version is ${name.trim()}'))** _should be_ **this.logs.push(~ initial version is ${name.trim()} ~)**
+ * Page 19 (Code Snippet 2, line 8):  **this.logs.push('version changed to ${name.trim()}')** _should be_ **this.logs.push(~ version changed to ${name.trim()} ~)**
+ 
 ## Get to Know the Author
 **Muhammad Ahsan Ayaz**
 is a Google Developer Expert in Angular and a software architect at Syncron. He has taught programming worldwide for the past 8 years through articles, video content, one-to-one mentoring, and tech talks at different global conferences. He has developed several libraries and plugins used by hundreds of thousands of developers, including ngx-device-detector, which has over 5 million installs and over 2,000 GitHub projects using it. He blogs at https://ahsanayaz.com and has a YouTube channel at https://ahsanayaz.com/youtube, where he regularly uploads video tutorials related to web and mobile app development. Apart from programming, Ahsan likes to travel and play multiplayer video games. He lives in Sweden with his wife.
