@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs/internal/observable/interval';
 import { Subscription } from 'rxjs/internal/Subscription';
 
@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
   subscription: Subscription = null;
   inputStreamData = ['john wick', 'inception', 'interstellar'];
   outputStreamData = [];
@@ -16,15 +16,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {}
 
-  ngOnDestroy() {
-    this.stopStream();
-  }
-
   startStream() {
     const streamSource = interval(1500);
     this.subscription = streamSource.subscribe((input) => {
       this.outputStreamData.push(input);
-      console.log('stream output', input);
     });
   }
 
