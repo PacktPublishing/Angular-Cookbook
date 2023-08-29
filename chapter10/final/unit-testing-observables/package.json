@@ -1,5 +1,5 @@
 {
-  "name": "using-spies-on-injected-service",
+  "name": "unit-testing-observables",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
