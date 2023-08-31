@@ -26,10 +26,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       .get('username')
       .valueChanges.pipe(
         takeWhile(() => !!this.componentAlive),
-        switchMap((query) => this.userService.searchUsers(query))
       )
-      .subscribe((users) => {
-        this.users = users;
+      .subscribe(() => {
+        this.searchUsers()
       });
   }
 
