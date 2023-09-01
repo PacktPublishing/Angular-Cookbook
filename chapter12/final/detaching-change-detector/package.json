@@ -1,5 +1,5 @@
 {
-  "name": "using-onpush-change-detection",
+  "name": "detaching-change-detector",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
