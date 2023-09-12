@@ -71,6 +71,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
  * Page 19 (Code Snippet 1, line 6):  **this.logs.push('initial version is ${name.trim()}')** _should be_ **this.logs.push( ~ initial version is ${name.trim()} ~)**
  * Page 19 (Code Snippet 2, line 6):  **this.logs.push('initial version is ${name.trim()}'))** _should be_ **this.logs.push(~ initial version is ${name.trim()} ~)**
  * Page 19 (Code Snippet 2, line 8):  **this.logs.push('version changed to ${name.trim()}')** _should be_ **this.logs.push(~ version changed to ${name.trim()} ~)**
+ * Page 310 (Code Snippet 1, lines 4-5): **it('should submit a new release log with the correct input values'** _should be_ **it('should disable the submit button when version is incorrect'**
  
 ## Get to Know the Author
 **Muhammad Ahsan Ayaz**
