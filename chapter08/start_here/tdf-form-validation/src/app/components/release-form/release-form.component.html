@@ -8,7 +8,7 @@
   </div>
   <div class="form-group">
     <label for="versionNumber">Version Number</label>
-    <input  name="version" [(ngModel)]="newLog.version" type="text" class="form-control" id="versionNumber" aria-describedby="versionHelp" placeholder="Enter version number">
+    <input  name="version" [(ngModel)]="newLog.version" type="text" class="form-control" id="versionNumber" aria-describedby="versionHelp" placeholder="Enter version number" required>
     <small id="versionHelp" class="form-text text-muted">Use semantic versioning (x.x.x)</small>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
