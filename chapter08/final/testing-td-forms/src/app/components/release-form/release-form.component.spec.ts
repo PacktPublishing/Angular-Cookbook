@@ -38,7 +38,7 @@ describe('ReleaseFormComponent', () => {
       expectedReleaseLog
     );
   }));
-  it('should submit a new release log with the correct input values', fakeAsync(async () => {
+  it('should disable the submit button when version is incorrect', fakeAsync(async () => {
     const submitButton = fixture.nativeElement.querySelector(
       'button[type="submit"]'
     );
